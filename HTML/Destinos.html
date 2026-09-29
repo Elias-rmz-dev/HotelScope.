@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos</title>
+    <link rel="stylesheet" href="../CSS/Destinos.css">
+    <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+</head>
+
+<body>
+
+    <!--Inicio de la Parte de Henry-->
+    <header class="header">
+
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav-link">
+
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../HTML/página1.html">Hoteles</a></li>
+                <li><a href="../HTML/página2.html">Reseñas</a></li>
+                <li><a href="../HTML/Destinos.html">Destinos</a></li>
+                <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+          </div>
+
+          <div class="menu-tres-puntos">
+               <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+                <div class="menu-desplegable" id="menuDesplegable">
+                   <button onclick="mostrarMisReservas()">Mis reservas</button>
+                   <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                   <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+          </div>
+
+    </header>
+    <!--Fin de parte de Henry-->
+
+
+    <!--Inicio de la Hero-->
+    <!-- Inicio de la Hero -->
+
+    <section class="hero-destinos">
+
+        <div class="hero-imagen">
+            <img src="../IMG/JPG/Destinos Hero.jpg" alt="Imagen del hotel">
+        </div>
+
+        <div class="hero-text">
+
+            <h1 class="hero-titulo">
+                Descubre El Salvador
+            </h1>
+
+            <p class="hero-descripcion">
+                Explora los mejores destinos y encuentra el hotel perfecto para tu próxima aventura
+            </p>
+
+        </div>
+
+    </section>
+
+    <!--Fin Hero-->
+
+
+    <section class="destinos">
+        <h2 class="destinos-titulo">Explora nuestros destinos</h2>
+        <div class="destinos-contenedor">
+
+            <!-- Sonsonate -->
+            <div class="tarjeta-destino">
+                <img src="../IMG/JPG/Sonsonate playa.jfif" alt="Paisaje de Sonsonate">
+                <div class="tarjeta-contenido">
+
+                    <h3>Sonsonate</h3>
+                    <a href="../HTML/página1.html" class="btn-hoteles">
+                        Ver hoteles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- La Libertad -->
+            <div class="tarjeta-destino">
+                <img src="../IMG/JPG/La Libertad Surf.jfif" alt="Paisaje de La Libertad">
+                <div class="tarjeta-contenido">
+                    <h3>La Libertad</h3>
+                    <a href="la-libertad.html" class="btn-hoteles">
+                        Ver hoteles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Usulután -->
+            <div class="tarjeta-destino">
+                <img src="../IMG/JPG/Usulután Paísaje.jfif" alt="Paisaje de Usulután">
+                <div class="tarjeta-contenido">
+                    <h3>Usulután</h3>
+                    <a href="usulutan.html" class="btn-hoteles">
+                        Ver hoteles
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Santa Ana -->
+            <div class="tarjeta-destino">
+
+                <img src="../IMG/JPG/Santa Ana Volcán.jfif" alt="Paisaje de Santa Ana">
+
+                <div class="tarjeta-contenido">
+
+                    <h3>Santa Ana</h3>
+
+                    <a href="santa-ana.html" class="btn-hoteles">
+                        Ver hoteles
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--Atracciones de cada destino inicio-->
+
+    <div class="outer-wrapper">
+
+        <div class="seccion-gris">
+
+            <h2 class="titulo-principal">Atracciones Destacadas</h2>
+
+            <div class="linea-amarilla"></div>
+
+            <div class="contenedor-beneficios">
+
+                <div class="beneficio">
+
+                    <div class="icono-circulo">
+
+                        <video class="animacion" muted playsinline preload="metadata" disablePictureInPicture>
+                            <source src="../Video Mp4/man-surfing-animation.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                    <h3>Surf</h3>
+
+                    <p>El Salvador, país con las mejores olas del mundo</p>
+
+                </div>
+
+
+                <div class="beneficio">
+
+                    <div class="icono-circulo">
+
+                        <video class="animacion" muted playsinline preload="metadata" disablePictureInPicture>
+                            <source src="../Video Mp4/Volcano.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                    <h3>Volcanes y montañas</h3>
+
+                    <p>Habitaciones con vistas a volcanes</p>
+
+                </div>
+
+
+                <div class="beneficio">
+
+                    <div class="icono-circulo">
+
+                        <video class="animacion" muted playsinline preload="metadata" disablePictureInPicture>
+                            <source src="../Video Mp4/Man Relaxing At Beach.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                    <h3>Playas</h3>
+
+                    <p>Arena hecha de coral como Los Almendros</p>
+
+                </div>
+
+
+                <div class="beneficio">
+
+                    <div class="icono-circulo">
+
+                        <video class="animacion" muted playsinline preload="metadata" disablePictureInPicture>
+                            <source src="../Video Mp4/Man hiker standing on top of the mountain.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                    <h3>Naturaleza</h3>
+
+                    <p>Montañas, lagos, volcanes y diferentes atracciones</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Atracciones de cada destino fin-->
+
+
+    <!--Inicio de la parte de Elias-->
+
+    <footer class="footer">
+
+        <div class="footer-col">
+
+            <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+            <p>
+                La plataforma de reseñas de hoteles que te ayuda a encontrar
+                experiencias increíbles en cualquier lugar del país.
+            </p>
+
+            <div class="redes">
+
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../IMG/PNG/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="https://youtube.com" target="_blank">
+                    <img src="../IMG/PNG/youtube.png" alt="YouTube">
+                </a>
+
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../IMG/PNG/instagram.png" alt="Instagram">
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <nav class="footer-col">
+
+            <h3>Navegación</h3>
+
+            <ul>
+
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../HTML/página1.html ">Hoteles</a></li>
+                <li><a href="../HTML/página2.html">Reseñas</a></li>
+                <li><a href="../HTML/Destinos.html">Destinos</a></li>
+                <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+
+        <nav class="footer-col">
+
+            <h3>Destinos Populares</h3>
+
+            <ul>
+
+                <li><a href="página1.html">Sonsonate</a></li>
+                <li><a href="la-libertad.html">La Libertad</a></li>
+                <li><a href="usulutan.html">Usulután</a></li>
+                <li><a href="santa-ana.html">Santa Ana</a></li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="footer-col">
+
+            <h3>Contacto</h3>
+
+            <p>Hotelscope@gmail.com</p>
+            <p>+503 0000-0000</p>
+            <p>Sonsonate, El Salvador</p>
+
+        </div>
+
+    </footer>
+
+<script src="../JS/buscar.js"></script>
+<script src="../JS/destinos.js"></script>
+<script src="../JS/sesion.js"></script>
+<script src="../JS/reservas.js"></script>
+<script src="../JS/resenas.js"></script>
+
+</body>
+
+</html>

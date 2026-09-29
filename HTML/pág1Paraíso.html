@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Hotel Paraiso</title>
+          <link rel="stylesheet" href="../CSS/pág1Decameron.css">
+          <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+      </head>
+      <body>
+
+  <!--Inicio de la Parte de Henry-->
+             <header class="header">
+                
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+       </div>  
+       
+          <nav>
+               <ul class="nav-link">     
+          
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+          
+               </ul>
+          </nav>
+
+          <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+          </div>
+
+          <div class="menu-tres-puntos">
+               <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+                <div class="menu-desplegable" id="menuDesplegable">
+                   <button onclick="mostrarMisReservas()">Mis reservas</button>
+                   <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                   <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+          </div>
+
+         </header>
+
+
+        <h1 class="title">Rancho Paraíso</h1>
+        
+         <div class="hotel-ubicacion">
+            <img src="../IMG/PNG/Pin maker.png" alt="Ubicacion" class="icono-ubicacion">
+
+            <span>Se encuentra en la zona costera de Playa Metalío, Acajutla, Sonsonate. - Buena ubicación -</span>
+
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Rancho+Paraiso,+Playa+Metalio,+Acajutla,+Sonsonate,+El+Salvador" 
+               target="_blank" 
+               class="mostrar-mapa">
+               Mostrar en el mapa
+            </a>
+        </div>
+
+        <div class="hotel-calificacion">
+            <span class="nota">4.6</span>
+            <span>Excelente</span>
+            <span class="punto">•</span>
+            <span>15 comentarios</span>
+        </div>
+
+        <p class="horario-hotel">Check-in: 3:00 PM &nbsp;·&nbsp; Check-out: 12:00 PM</p>
+
+        <div class="contenido-hotel">
+
+            <div class="hotel-imagen">
+                <img src="../IMG/JPG/Hotel Paraiso.jpeg" alt="imagenes de Paraíso">
+            </div>
+
+        <div class="seccion-gris">
+            
+            <div class="contenedor-beneficios">
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <img src="../IMG/PNG/taza.png" alt="logo desayuno">
+                    </div>
+                    <p>Cocina equipada</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <img src="../IMG/PNG/auto.png" alt="logo Parking">
+                    </div>
+                    <p>Parking gratis en el alojamiento</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <img src="../IMG/PNG/wi-fi.png" alt="logo wifi">
+                    </div>
+                    <p>Wifi gratis</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <img src="../IMG/PNG/escoba.png" alt="logo escoba">
+                    </div>
+                    <p>Excelentel limpieza</p>
+                </div>
+                
+            </div>
+
+         </div>
+        </div>
+
+        <!--Inicio de la sección de reserva simulada-->
+
+        <section class="seccion-reserva" id="seccion-reserva">
+
+            <h2 class="titulo-reserva">Reserva tu estadía</h2>
+
+            <div class="caja-reserva">
+
+                <form id="form-reserva" class="formulario-reserva">
+
+                    <div class="campo-reserva">
+                        <label for="nombre-huesped">Nombre del huésped</label>
+                        <input type="text" id="nombre-huesped" placeholder="Ej. Ana Martínez" required>
+                    </div>
+
+                    <div class="campo-reserva">
+                        <label for="fecha-entrada">Fecha de entrada</label>
+                        <input type="date" id="fecha-entrada" required>
+                    </div>
+
+                    <div class="campo-reserva">
+                        <label for="fecha-salida">Fecha de salida</label>
+                        <input type="date" id="fecha-salida" required>
+                    </div>
+
+                    <div class="campo-reserva">
+                        <label for="num-huespedes">Huéspedes</label>
+                        <input type="number" id="num-huespedes" min="1" max="10" value="1" required>
+                    </div>
+
+                    <div class="campo-reserva">
+                        <label for="num-habitaciones">Habitaciones</label>
+                        <select id="num-habitaciones">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-confirmar-reserva">Confirmar reserva</button>
+
+                    <p id="mensaje-reserva" class="mensaje-reserva"></p>
+
+                </form>
+
+                <div class="resumen-lateral">
+
+                    <p class="precio-noche">$90 <span>/ noche</span></p>
+
+                    <p class="horario-resumen">Entrada 3:00 PM &nbsp;·&nbsp; Salida 12:00 PM</p>
+
+                    <div id="resumen-reserva" class="resumen-reserva"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--Fin de la sección de reserva simulada-->
+
+        <div class="reseñas" id="reseñas">
+          
+            <div class="titulo-resenas">
+               <h2 class="Mejores-hoteles">Reseñas de viajeros</h2>
+               <a href="../HTML/pág2Paraíso.html">Ver las 15 reseñas</a>
+            </div>
+
+          <div class="contenedor-hoteles">
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">E</div>
+
+        <div class="datos-resena">
+            <h3>Eduardo S.</h3>
+            <span>Guatemala · Julio 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Me gustó mucho la experiencia. El lugar está muy bonito,
+        el ambiente es relajado y perfecto para pasar un día en familia. 
+        Hay algunos detalles que podrían mejorar, pero en general estuvo muy bien.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">C</div>
+
+        <div class="datos-resena">
+            <h3>Carlos Z.</h3>
+            <span>Costa Rica · Febrero 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Excelente lugar para descansar y disfrutar de la naturaleza.
+        Lo que más me gustó fue la tranquilidad y el ambiente. 
+        Fue una experiencia agradable y espero regresar pronto.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">S</div>
+
+        <div class="datos-resena">
+            <h3>Sonia T.</h3>
+            <span>Honduras · Enero 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Un lugar muy tranquilo y bonito para desconectarse.
+        El ambiente del rancho es excelente y todo se siente bastante acogedor.
+        Definitivamente volvería.
+    </p>
+
+</div>
+
+          </div>
+        </div>
+     
+
+               <!--Inicio de la parte de Elias-->
+
+   <footer class="footer">
+
+    <div class="footer-col">
+
+        <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+        <p>
+            La plataforma de reseñas de hoteles que te ayuda a encontrar
+            experiencias increíbles en cualquier lugar del país.
+        </p>
+
+        <div class="redes">
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="../IMG/PNG/facebook.png" alt="Facebook">
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+                <img src="../IMG/PNG/youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://instagram.com" target="_blank">
+                <img src="../IMG/PNG/instagram.png" alt="Instagram">
+            </a>
+
+        </div>
+
+    </div>
+
+    <nav class="footer-col">
+
+        <h3>Navegación</h3>
+
+        <ul>
+
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+        </ul>
+
+    </nav>
+
+    <nav class="footer-col">
+
+        <h3>Destinos Populares</h3>
+
+        <ul>
+
+            <li><a href="página1.html">Sonsonate</a></li>
+            <li><a href="la-libertad.html">La Libertad</a></li>
+            <li><a href="usulutan.html">Usulután</a></li>
+            <li><a href="santa-ana.html">Santa Ana</a></li>
+
+        </ul>
+
+    </nav>
+
+     
+    <div class="footer-col">
+
+        <h3>Contacto</h3>
+
+        <p>Hotelscope@gmail.com</p>
+        <p>+503 0000-0000</p>
+        <p>Sonsonate, El Salvador</p>
+
+    </div>
+
+</footer>
+
+<script src="../JS/buscar.js"></script>
+<script src="../JS/sesion.js"></script>
+<script src="../JS/reservas.js"></script>
+<script src="../JS/resenas.js"></script>
+
+<script>
+    inicializarFormularioReserva("paraiso");
+</script>
+
+</body>
+</html>

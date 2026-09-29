@@ -1,0 +1,1314 @@
+ /*Inicio de la partde de Henry*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #fff;
+}
+
+header{
+    background-color: #8a8a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 20px 30px;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-link{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.header .nav{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav-link li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+a{
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+
+#logo{
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.header .nav-link li a{
+    transition: all .3s ease;
+}
+
+.header .nav-link li a:hover{
+    color: #D4AF37;
+}
+
+.header .nav-link li a:hover{
+    color: #D4AF37;
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 6px;
+}
+
+.header nav{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.buscar-icono img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.buscar-icono img:hover{
+    transform:scale(1.1);
+    transition:.3s;
+}
+
+.btn button{
+
+    background:#fff;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn button:hover{
+    transform:scale(1.1);
+    transition:.3s;
+    background-color: #D4AF37;
+    color: #fff;
+}
+/*Buscar*/
+.busqueda-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.input-buscar{
+    width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    opacity: 0;
+    transition: width 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+}
+
+.input-buscar.activo{
+    width: 220px;
+    padding: 8px 15px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+#sin-resultados{
+    text-align: center;
+    color: #8a8a8a;
+    font-size: 22px;
+    margin: 40px 0;
+}
+/*Menú tres puntos*/
+.menu-tres-puntos{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.boton-tres-puntos{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: .3s;
+}
+.boton-tres-puntos:hover{
+    color: #D4AF37;
+    transform: scale(1.1);
+}
+.menu-desplegable{
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 1001;
+}
+.menu-desplegable.mostrar{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.menu-desplegable button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.menu-desplegable button:hover{
+    background-color: #eeeeee;
+    color: #D4AF37;
+}
+.overlay-reservas{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+.modal-reservas{
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.encabezado-modal-reservas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: #8a8a8a;
+}
+.encabezado-modal-reservas h2{
+    color: #fff;
+    font-size: 22px;
+}
+.cerrar-modal-reservas{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+}
+.cuerpo-modal-reservas{
+    padding: 20px;
+    overflow-y: auto;
+}
+.sin-reservas{
+    text-align: center;
+    color: #888;
+    padding: 30px 0;
+}
+.card-mi-reserva{
+    display: flex;
+    gap: 14px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+.card-mi-reserva img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.datos-mi-reserva{ flex: 1; }
+.datos-mi-reserva h3{ font-size: 17px; margin-bottom: 4px; }
+.datos-mi-reserva p{ font-size: 13px; color: #555; line-height: 1.4; }
+.btn-cancelar-reserva{
+    background: #fff;
+    border: 2px solid red;
+    color: red;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+    flex-shrink: 0;
+}
+.btn-cancelar-reserva:hover{ background: #c0392b; color: #fff; }
+/*Fin de la parte de Henry*/
+/*Fin de la parte de Henry*/
+
+
+/*Hero Inicio*/
+
+.hero-destinos {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-imagen {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-titulo {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-descripcion {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/*Hero Fin*/
+
+
+/* ============================= */
+/* DESTINOS */
+/* ============================= */
+
+.destinos {
+    width: 100%;
+    padding: 70px 5%;
+    background-color: #f5f5f5;
+}
+
+.destinos-titulo {
+    text-align: center;
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 45px;
+}
+
+/* Contenedor de las 4 tarjetas */
+
+.destinos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Tarjeta vertical */
+
+.tarjeta-destino {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+
+.tarjeta-destino img {
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido debajo de la imagen */
+
+.tarjeta-contenido {
+    text-align: center;
+    padding: 22px 15px 25px;
+}
+
+.tarjeta-contenido h3 {
+    margin: 0 0 18px;
+
+    font-size: 26px;
+    color: #222;
+}
+
+/* Botón */
+
+.btn-hoteles {
+    display: inline-block;
+
+    padding: 11px 25px;
+
+    background-color: white;
+    color: #111;
+
+    border: 2px solid #111;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+
+.btn-hoteles:hover {
+    background-color: #D4AF37;
+    color: white;
+    border-color: #D4AF37;
+}
+
+@media (max-width: 600px) {
+
+    .destinos {
+        padding: 50px 7%;
+    }
+
+    .destinos-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-destino img {
+        height: 350px;
+    }
+
+}
+
+
+/*Inicio de la parte de Anderson*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+}
+
+.outer-wrapper {
+    padding: 60px 40px;
+    background-color: #ffffff;
+}
+
+.seccion-gris {
+    background-color: #dcdcdc;
+    padding: 40px 20px;
+    border-radius: 6px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 26px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.linea-amarilla {
+    width: 60px;
+    height: 4px;
+    background-color: #f1c40f;
+    margin: 0 auto 40px auto;
+}
+
+.contenedor-beneficios {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.beneficio {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icono-circulo {
+    width: 85px;
+    height: 85px;
+    background-color: #b8b8b8;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icono-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+
+/* NUEVO: VIDEO DE LAS ATRACCIONES */
+
+.icono-circulo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+
+.icono-circulo svg {
+    width: 42px;
+    height: 42px;
+    stroke: #000000;
+}
+
+.beneficio h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.beneficio p {
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/*Fin de la parte de Anderson*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+}
+
+.outer-wrapper {
+    padding: 60px 40px;
+    background-color: #ffffff;
+}
+
+.seccion-gris {
+    background-color: #dcdcdc;
+    padding: 40px 20px;
+    border-radius: 6px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 26px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.linea-amarilla {
+    width: 60px;
+    height: 4px;
+    background-color: #f1c40f;
+    margin: 0 auto 40px auto;
+}
+
+.contenedor-beneficios {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.beneficio {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icono-circulo {
+    width: 85px;
+    height: 85px;
+    background-color: #b8b8b8;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icono-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* VIDEO DE LAS ATRACCIONES */
+
+.icono-circulo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+
+.icono-circulo svg {
+    width: 42px;
+    height: 42px;
+    stroke: #000000;
+}
+
+.beneficio h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.beneficio p {
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/*Fin de la parte de Anderson*/
+ 
+/*Inicio de la parte de Elias*/
+
+.footer{
+    background-color: #8A8A8A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 45px;
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
+}
+
+.footer-col{
+    width: 210px;
+    text-align: left;
+}
+
+.logo{
+    width: 170px;
+    margin-bottom: 5px;
+}
+
+.footer h3{
+    color: gold;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.footer p,
+.footer a,
+.footer li{
+    color: white;
+    text-decoration: none;
+    line-height: 1.6;
+    font-size: 15px;
+    font-family: Arial;
+}
+
+.footer ul a{
+    transition: color 0.2s ease;
+
+}
+
+.footer ul a:hover{
+    color: gold;
+}
+
+.footer ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li{
+    margin-bottom: 5px;
+}
+
+.redes{
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.redes img{
+    width: 36px;
+    height: 36px;
+    margin-right: 0;
+    transition: all 0.3s;
+}
+
+.redes img:hover{
+    transform: scale(1.2);
+}
+
+/* =========================================================
+RESPONSIVE - DESTINOS
+========================================================= */
+
+/* -------------------------
+TABLETS
+1024px o menos
+------------------------- */
+
+@media (max-width: 1024px) {
+
+/* HEADER */
+header {
+    height: auto;
+    min-height: 85px;
+    padding: 15px 20px;
+    gap: 10px;
+}
+
+.header .logo img {
+    height: 60px;
+}
+
+.header nav {
+    flex: 1;
+}
+
+.header .nav-link {
+    gap: 0;
+    justify-content: center;
+}
+
+.header .nav-link li {
+    padding: 0 10px;
+}
+
+.header .nav-link li a {
+    font-size: 16px;
+}
+
+.acciones {
+    gap: 10px;
+}
+
+.buscar-icono img {
+    width: 42px;
+    height: 42px;
+}
+
+.input-buscar.activo {
+    width: 180px;
+}
+
+.menu-tres-puntos {
+    margin-left: 5px;
+}
+
+
+/* HERO */
+.hero-destinos {
+    height: 430px;
+}
+
+.hero-titulo {
+    font-size: 48px;
+}
+
+.hero-descripcion {
+    font-size: 20px;
+}
+
+
+/* DESTINOS */
+.destinos {
+    padding: 60px 4%;
+}
+
+.destinos-titulo {
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.destinos-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-destino img {
+    height: 260px;
+}
+
+
+/* ATRACCIONES */
+.outer-wrapper {
+    padding: 50px 25px;
+}
+
+.seccion-gris {
+    padding: 35px 20px;
+}
+
+.contenedor-beneficios {
+    gap: 25px;
+}
+
+.beneficio {
+    min-width: 200px;
+}
+
+
+/* FOOTER */
+.footer {
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.footer-col {
+    width: 200px;
+}
+
+}
+
+/* -------------------------
+CELULARES
+768px o menos
+------------------------- */
+
+@media (max-width: 768px) {
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    min-height: auto;
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header .logo {
+    order: 1;
+}
+
+.header .logo img {
+    height: 55px;
+    width: auto;
+}
+
+.header nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 8px 0 3px;
+}
+
+.header .nav-link {
+    width: max-content;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 0 auto;
+}
+
+.header .nav-link li {
+    padding: 0 9px;
+}
+
+.header .nav-link li a {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.acciones {
+    order: 2;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.buscar-icono img {
+    width: 38px;
+    height: 38px;
+}
+
+.menu-tres-puntos {
+    order: 2;
+    margin-left: 0;
+}
+
+.boton-tres-puntos {
+    font-size: 28px;
+    padding: 5px 7px;
+}
+
+.menu-desplegable {
+    top: 40px;
+    right: 0;
+    width: 160px;
+}
+
+.menu-desplegable button {
+    font-size: 14px;
+}
+
+.input-buscar.activo {
+    position: absolute;
+    top: 70px;
+    right: 45px;
+    width: 190px;
+    z-index: 1100;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+
+/* HERO */
+.hero-destinos {
+    height: 380px;
+}
+
+.hero-text {
+    width: 100%;
+    padding: 20px;
+}
+
+.hero-titulo {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-descripcion {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+
+/* DESTINOS */
+.destinos {
+    padding: 50px 20px;
+}
+
+.destinos-titulo {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.destinos-contenedor {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: 100%;
+}
+
+.tarjeta-destino {
+    width: 100%;
+}
+
+.tarjeta-destino img {
+    height: 300px;
+}
+
+.tarjeta-contenido {
+    padding: 20px 15px 25px;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 24px;
+}
+
+.btn-hoteles {
+    padding: 10px 22px;
+    font-size: 15px;
+}
+
+
+/* ATRACCIONES */
+.outer-wrapper {
+    padding: 40px 15px;
+}
+
+.seccion-gris {
+    width: 100%;
+    padding: 35px 15px;
+}
+
+.titulo-principal {
+    font-size: 25px;
+}
+
+.linea-amarilla {
+    margin-bottom: 30px;
+}
+
+.contenedor-beneficios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 15px;
+}
+
+.beneficio {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.icono-circulo {
+    width: 80px;
+    height: 80px;
+}
+
+.beneficio h3 {
+    font-size: 16px;
+}
+
+.beneficio p {
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+
+/* FOOTER */
+.footer {
+    padding: 40px 25px;
+    gap: 35px 20px;
+    justify-content: center;
+}
+
+.footer-col {
+    width: calc(50% - 20px);
+    min-width: 160px;
+}
+
+.footer .logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer h3 {
+    font-size: 17px;
+}
+
+.footer p,
+.footer a,
+.footer li {
+    font-size: 14px;
+}
+
+}
+
+/* -------------------------
+CELULARES PEQUEÑOS
+480px o menos
+------------------------- */
+
+@media (max-width: 480px) {
+
+/* HEADER */
+header {
+    padding: 8px 10px;
+}
+
+.header .logo img {
+    height: 48px;
+}
+
+.buscar-icono img {
+    width: 34px;
+    height: 34px;
+}
+
+.boton-tres-puntos {
+    font-size: 25px;
+}
+
+.header nav {
+    padding-top: 7px;
+}
+
+.header .nav-link li {
+    padding: 0 7px;
+}
+
+.header .nav-link li a {
+    font-size: 13px;
+}
+
+.input-buscar.activo {
+    width: calc(100vw - 90px);
+    right: 40px;
+    top: 62px;
+}
+
+
+/* HERO */
+.hero-destinos {
+    height: 300px;
+}
+
+.hero-titulo {
+    font-size: 32px;
+}
+
+.hero-descripcion {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* DESTINOS */
+.destinos {
+    padding: 40px 15px;
+}
+
+.destinos-titulo {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.destinos-contenedor {
+    gap: 20px;
+}
+
+.tarjeta-destino img {
+    height: 230px;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.btn-hoteles {
+    font-size: 14px;
+    padding: 9px 20px;
+}
+
+
+/* ATRACCIONES */
+.outer-wrapper {
+    padding: 30px 10px;
+}
+
+.seccion-gris {
+    padding: 30px 10px;
+}
+
+.titulo-principal {
+    font-size: 22px;
+}
+
+.contenedor-beneficios {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.beneficio {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.icono-circulo {
+    width: 85px;
+    height: 85px;
+}
+
+
+/* FOOTER */
+.footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 20px;
+    gap: 30px;
+}
+
+.footer-col {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+.footer .logo {
+    width: 150px;
+}
+
+.footer ul {
+    text-align: center;
+}
+
+.redes {
+    justify-content: center;
+}
+
+.redes img {
+    width: 34px;
+    height: 34px;
+}
+
+}
+
+/* -------------------------
+PANTALLAS MUY PEQUEÑAS
+360px o menos
+------------------------- */
+
+@media (max-width: 360px) {
+
+.header .logo img {
+    height: 42px;
+}
+
+.buscar-icono img {
+    width: 30px;
+    height: 30px;
+}
+
+.boton-tres-puntos {
+    font-size: 23px;
+}
+
+.header .nav-link li {
+    padding: 0 5px;
+}
+
+.header .nav-link li a {
+    font-size: 12px;
+}
+
+.hero-destinos {
+    height: 270px;
+}
+
+.hero-titulo {
+    font-size: 28px;
+}
+
+.hero-descripcion {
+    font-size: 15px;
+}
+
+.destinos-titulo {
+    font-size: 24px;
+}
+
+.tarjeta-destino img {
+    height: 200px;
+}
+
+.titulo-principal {
+    font-size: 20px;
+}
+
+}

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>El Ancla Hostal de playa</title>
+          <link rel="stylesheet" href="../CSS/pág2Decameron.css">
+          <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+      </head>
+      <body>
+
+          <!--Inicio de la Parte de Henry-->
+             <header class="header">
+
+    <div class="logo">
+        <a href="../index.html">
+            <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+        </a>
+    </div>
+
+    <nav>
+        <ul class="nav-link">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="acciones">
+        <div class="busqueda-container">
+            <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+            <div class="buscar-icono" onclick="manejarClicBuscar()">
+                <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-tres-puntos">
+        <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+        <div class="menu-desplegable" id="menuDesplegable">
+            <button onclick="mostrarMisReservas()">Mis reservas</button>
+            <button onclick="mostrarMisResenas()">Mis reseñas</button>
+            <button onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+
+</header>
+
+         <!--Fin de parte de Henry-->
+
+         <div class="titulo-resenas">
+    <h2 class="Mejores-hoteles">Reseñas de viajeros</h2>
+
+    <select>
+        <option value="1">Mejor valorados</option>
+        <option value="2">Peor valorados</option>
+    </select>
+</div>
+
+<form id="form-resena" class="form-nueva-resena">
+    <h3>Deja tu reseña</h3>
+
+    <input type="text" id="resena-nombre" placeholder="Tu nombre" required>
+
+    <select id="resena-estrellas" required>
+        <option value="5">★★★★★ Excelente</option>
+        <option value="4">★★★★☆ Muy bueno</option>
+        <option value="3">★★★☆☆ Bueno</option>
+        <option value="2">★★☆☆☆ Regular</option>
+        <option value="1">★☆☆☆☆ Malo</option>
+    </select>
+
+    <textarea id="resena-comentario" placeholder="Cuéntanos tu experiencia..." required></textarea>
+
+    <button type="submit" class="btn-hoteles">Publicar reseña</button>
+</form>
+
+<div class="contenedor-hoteles">
+
+          <div class="contenedor-hoteles">
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">M</div>
+
+        <div class="datos-resena">
+            <h3>María L.</h3>
+            <span>El Salvador · Agosto 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Un lugar muy agradable para pasar unos días cerca de
+        la playa. Las habitaciones estaban limpias y el personal
+        fue muy amable durante nuestra estadía.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">J</div>
+
+        <div class="datos-resena">
+            <h3>Jorge R.</h3>
+            <span>Guatemala · Julio 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Buena experiencia en general. La ubicación es bastante
+        conveniente para disfrutar de la playa y el ambiente
+        del hostal es tranquilo y familiar.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">D</div>
+
+        <div class="datos-resena">
+            <h3>Daniela P.</h3>
+            <span>Honduras · Junio 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Me gustó bastante el lugar por su cercanía a la playa.
+        El servicio fue bueno y el precio me pareció adecuado
+        para la experiencia que ofrece.
+    </p>
+
+</div>
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">R</div>
+
+        <div class="datos-resena">
+            <h3>Ricardo M.</h3>
+            <span>El Salvador · Mayo 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Muy buena opción para quedarse cerca de Metalio.
+        El ambiente del hostal es tranquilo y la cercanía
+        con la playa hace que sea bastante cómodo.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">A</div>
+
+        <div class="datos-resena">
+            <h3>Ana C.</h3>
+            <span>El Salvador · Abril 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Pasamos un fin de semana agradable. La habitación
+        estaba limpia y el personal fue atento durante
+        nuestra estadía.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">L</div>
+
+        <div class="datos-resena">
+            <h3>Luis G.</h3>
+            <span>Guatemala · Marzo 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        El lugar está bastante bien para pasar unos días
+        en la playa. Me gustó especialmente el ambiente
+        tranquilo y la atención del personal.
+    </p>
+
+</div>
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">S</div>
+
+        <div class="datos-resena">
+            <h3>Sofía V.</h3>
+            <span>El Salvador · Febrero 2026</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Fue una experiencia muy agradable. La playa queda
+        bastante cerca y el hostal tiene un ambiente perfecto
+        para descansar y alejarse un poco de la ciudad.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">P</div>
+
+        <div class="datos-resena">
+            <h3>Pablo T.</h3>
+            <span>Honduras · Enero 2026</span>
+        </div>
+
+        <div class="estrellas">★★★☆☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        El hostal cumple con lo necesario para una estadía
+        corta. La ubicación es buena y el ambiente es tranquilo,
+        aunque hay algunos detalles que podrían mejorar.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">K</div>
+
+        <div class="datos-resena">
+            <h3>Kevin R.</h3>
+            <span>El Salvador · Diciembre 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Me gustó bastante para pasar las vacaciones con amigos.
+        El acceso a la zona de playa fue muy conveniente y
+        el personal nos atendió bien.
+    </p>
+
+</div>
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">C</div>
+
+        <div class="datos-resena">
+            <h3>Camila R.</h3>
+            <span>Costa Rica · Noviembre 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Una experiencia muy bonita. El lugar es sencillo pero
+        agradable y la cercanía con la playa fue lo que más
+        disfrutamos durante nuestra visita.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">F</div>
+
+        <div class="datos-resena">
+            <h3>Fernando S.</h3>
+            <span>El Salvador · Octubre 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Buena relación entre el precio y lo que ofrece.
+        La habitación estaba ordenada y el ambiente del
+        hostal fue bastante relajado.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">V</div>
+
+        <div class="datos-resena">
+            <h3>Valeria M.</h3>
+            <span>Guatemala · Septiembre 2025</span>
+        </div>
+
+        <div class="estrellas">★★★☆☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        El lugar está bien para una visita de pocos días.
+        Me gustó la ubicación y el ambiente, aunque algunas
+        cosas del servicio podrían mejorar.
+    </p>
+
+</div>
+
+          <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">D</div>
+
+        <div class="datos-resena">
+            <h3>Diego P.</h3>
+            <span>El Salvador · Agosto 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Muy buen lugar para disfrutar de Metalio. La playa está
+        cerca y el hostal ofrece un ambiente bastante cómodo
+        para descansar después de pasar el día afuera.
+    </p>
+
+     </div>
+
+            <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">N</div>
+
+        <div class="datos-resena">
+            <h3>Natalia G.</h3>
+            <span>Honduras · Julio 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★★</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Me encantó la experiencia. El ambiente es tranquilo,
+        la atención fue buena y la ubicación cerca de la playa
+        hizo que disfrutáramos mucho nuestra estadía.
+    </p>
+
+</div>
+
+        <div class="card-reseñas">
+
+    <div class="encabezado-resena">
+
+        <div class="avatar">O</div>
+
+        <div class="datos-resena">
+            <h3>Óscar J.</h3>
+            <span>El Salvador · Junio 2025</span>
+        </div>
+
+        <div class="estrellas">★★★★☆</div>
+
+    </div>
+
+    <p class="parrafo-opinion">
+        Un hostal sencillo y agradable. El precio me pareció
+        razonable y la ubicación es buena para conocer la
+        zona de Metalio y disfrutar de la playa.
+    </p>
+
+</div>
+
+          </div>
+        </div>
+
+          <!--Inicio de la parte de Elias-->
+
+   <footer class="footer">
+
+    <div class="footer-col">
+
+        <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+        <p>
+            La plataforma de reseñas de hoteles que te ayuda a encontrar
+            experiencias increíbles en cualquier lugar del país.
+        </p>
+
+        <div class="redes">
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="../IMG/PNG/facebook.png" alt="Facebook">
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+                <img src="../IMG/PNG/youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://instagram.com" target="_blank">   
+                <img src="../IMG/PNG/instagram.png" alt="Instagram">   
+            </a>   
+   
+        </div>   
+   
+    </div>   
+   
+    <nav class="footer-col">   
+   
+        <h3>Navegación</h3>   
+   
+        <ul>   
+            <li><a href="../index.html">Inicio</a></li>   
+            <li><a href="../HTML/página1.html">Hoteles</a></li>   
+            <li><a href="../HTML/página2.html">Reseñas</a></li>   
+            <li><a href="destinos.html">Destinos</a></li>   
+            <li><a href="../HTML/contacto.html">Contacto</a></li>   
+        </ul>   
+   
+    </nav>   
+   
+    <nav class="footer-col">   
+   
+        <h3>Destinos Populares</h3>   
+   
+        <ul>   
+            <li><a href="página1.html">Sonsonate</a></li>   
+            <li><a href="la-libertad.html">La Libertad</a></li>   
+            <li><a href="usulutan.html">Usulután</a></li>   
+            <li><a href="santa-ana.html">Santa Ana</a></li>   
+        </ul>   
+   
+    </nav>   
+   
+     
+    <div class="footer-col">   
+   
+        <h3>Contacto</h3>   
+   
+        <p>Hotelscope@gmail.com</p>   
+        <p>+503 0000-0000</p>   
+        <p>Sonsonate, El Salvador</p>   
+   
+    </div>   
+   
+</footer> 
+
+       <script src="../JS/buscar.js"></script> 
+       <script src="../JS/sesion.js"></script> 
+       <script src="../JS/reservas.js"></script> 
+       <script src="../JS/resenas.js"></script> 
+
+       <script> 
+         inicializarFormularioResena("ancla", "El Ancla Hostal de playa"); 
+       </script> 
+
+      </body>
+</html>

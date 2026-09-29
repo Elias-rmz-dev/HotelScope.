@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Tekapa - Reseñas</title>
+    <link rel="stylesheet" href="../CSS/pág2Decameron.css">
+    <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+</head>
+
+<body>
+
+    <!--Inicio de la Parte de Henry-->
+    <header class="header">
+
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav-link">
+
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../HTML/página1.html">Hoteles</a></li>
+                <li><a href="../HTML/página2.html">Reseñas</a></li>
+                <li><a href="../HTML/Destinos.html">Destinos</a></li>
+                <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+        </div>
+
+        <div class="menu-tres-puntos">
+             <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+              <div class="menu-desplegable" id="menuDesplegable">
+                 <button onclick="mostrarMisReservas()">Mis reservas</button>
+                 <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                 <button onclick="cerrarSesion()">Cerrar sesión</button>
+              </div>
+        </div>
+
+    </header>
+    <!--Fin de parte de Henry-->
+
+
+    <div class="titulo-resenas">
+        <h2 class="Mejores-hoteles">Reseñas de viajeros</h2>
+        <select>
+            <option value="1">Mejor valorados</option>
+            <option value="2">Peor valorados</option>
+        </select>
+    </div>
+
+    <form id="form-resena" class="form-nueva-resena">
+        <h3>Deja tu reseña</h3>
+
+        <input type="text" id="resena-nombre" placeholder="Tu nombre" required>
+
+        <select id="resena-estrellas" required>
+            <option value="5">★★★★★ Excelente</option>
+            <option value="4">★★★★☆ Muy bueno</option>
+            <option value="3">★★★☆☆ Bueno</option>
+            <option value="2">★★☆☆☆ Regular</option>
+            <option value="1">★☆☆☆☆ Malo</option>
+        </select>
+
+        <textarea id="resena-comentario" placeholder="Cuéntanos tu experiencia..." required></textarea>
+
+        <button type="submit" class="btn-hoteles">Publicar reseña</button>
+    </form>
+
+    <div class="reseñas">
+
+        <div class="contenedor-hoteles">
+
+            <div class="card-reseñas">
+                <div class="encabezado-resena">
+                    <div class="avatar">E</div>
+                    <div class="datos-resena">
+                        <h3>Elizabeth R.</h3>
+                        <span>El Salvador · Enero 2026</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Un lugar muy bonito para disfrutar de la tranquilidad de Alegría.
+                    La ubicación del hotel permite apreciar un ambiente agradable y
+                    relajarse durante la estadía.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">M</div>
+
+                    <div class="datos-resena">
+                        <h3>Mario S.</h3>
+                        <span>El Salvador · Agosto 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Muy buena experiencia en Hotel Tekapa. La habitación estaba
+                    cómoda y el ambiente del lugar fue perfecto para descansar.
+                    El personal también fue bastante amable.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">C</div>
+
+                    <div class="datos-resena">
+                        <h3>Camila P.</h3>
+                        <span>Guatemala · Marzo 2024</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Me gustó mucho el ambiente del hotel. Es un lugar tranquilo
+                    para descansar y disfrutar de la naturaleza de Alegría.
+                    Las instalaciones están bastante bien cuidadas.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">V</div>
+
+                    <div class="datos-resena">
+                        <h3>Valentina Z.</h3>
+                        <span>El Salvador · Noviembre 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Pasamos un fin de semana muy agradable. El ambiente del hotel
+                    es tranquilo y las habitaciones tenían todo lo necesario
+                    para estar cómodos.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">D</div>
+
+                    <div class="datos-resena">
+                        <h3>Daniel P.</h3>
+                        <span>Honduras · Julio 2023</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Una buena opción para hospedarse en Alegría. La habitación
+                    estaba limpia y cómoda, además de que el lugar se siente
+                    bastante tranquilo.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">A</div>
+
+                    <div class="datos-resena">
+                        <h3>Andrea C.</h3>
+                        <span>El Salvador · Febrero 2026</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Me gustó mucho la estadía. El ambiente es bastante agradable
+                    y la ubicación es perfecta para conocer diferentes lugares
+                    de Alegría.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">F</div>
+
+                    <div class="datos-resena">
+                        <h3>Fernando G.</h3>
+                        <span>Estados Unidos · Octubre 2024</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Un hotel bastante cómodo para pasar unos días. La habitación tenía
+                    un ambiente agradable y tranquilo, lo que hizo más agradable
+                    nuestra estancia.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">S</div>
+
+                    <div class="datos-resena">
+                        <h3>Sofía L.</h3>
+                        <span>El Salvador · Junio 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Fuimos en familia y la pasamos muy bien. Las instalaciones son
+                    agradables y el ambiente tranquilo fue perfecto para descansar
+                    y disfrutar de Alegría.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">R</div>
+
+                    <div class="datos-resena">
+                        <h3>Ricardo V.</h3>
+                        <span>Nicaragua · Diciembre 2023</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    El hotel tiene un ambiente agradable y tranquilo. La habitación
+                    cumplió con lo necesario y fue una buena experiencia para
+                    una estadía corta.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">G</div>
+
+                    <div class="datos-resena">
+                        <h3>Gabriela T.</h3>
+                        <span>El Salvador · Abril 2024</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Me pareció un lugar bastante bonito. La atención fue buena y
+                    las instalaciones nos permitieron pasar un fin de semana
+                    cómodo y relajado.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">M</div>
+
+                    <div class="datos-resena">
+                        <h3>Miguel E.</h3>
+                        <span>Guatemala · Septiembre 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Una experiencia muy positiva. El hotel cuenta con buenas
+                    comodidades y el ambiente es perfecto para descansar
+                    después de conocer la zona.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">P</div>
+
+                    <div class="datos-resena">
+                        <h3>Paola N.</h3>
+                        <span>El Salvador · Mayo 2023</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Me gustó el ambiente del hotel y la comodidad de las habitaciones.
+                    Es una opción que consideraría nuevamente si vuelvo a visitar
+                    Alegría.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">L</div>
+
+                    <div class="datos-resena">
+                        <h3>Laura P.</h3>
+                        <span>El Salvador · Octubre 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Me encantó la tranquilidad del lugar. Es perfecto para
+                    descansar y disfrutar de un ambiente diferente. La atención
+                    también fue muy buena durante nuestra visita.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">N</div>
+
+                    <div class="datos-resena">
+                        <h3>Nelson R.</h3>
+                        <span>El Salvador · Enero 2024</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Un lugar agradable para pasar unos días. Las instalaciones
+                    estaban en buenas condiciones y la ubicación permite
+                    disfrutar de la tranquilidad de Alegría.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">K</div>
+
+                    <div class="datos-resena">
+                        <h3>Kevin M.</h3>
+                        <span>El Salvador · Julio 2026</span>
+                    </div>
+
+                    <div class="estrellas">★★★★★</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    Excelente experiencia. El hotel es cómodo, tranquilo y
+                    cuenta con un ambiente muy agradable. Fue una buena elección
+                    para pasar unos días en Alegría.
+                </p>
+
+            </div>
+
+
+            <div class="card-reseñas">
+
+                <div class="encabezado-resena">
+
+                    <div class="avatar">R</div>
+
+                    <div class="datos-resena">
+                        <h3>Rosa C.</h3>
+                        <span>El Salvador · Marzo 2025</span>
+                    </div>
+
+                    <div class="estrellas">★★★★☆</div>
+
+                </div>
+
+                <p class="parrafo-opinion">
+                    La experiencia fue bastante buena. El ambiente del hotel
+                    es tranquilo y las habitaciones son cómodas. Definitivamente
+                    es un lugar que recomendaría.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--Inicio de la parte de Elias-->
+
+    <footer class="footer">
+
+        <div class="footer-col">
+
+            <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+            <p>
+                La plataforma de reseñas de hoteles que te ayuda a encontrar
+                experiencias increíbles en cualquier lugar del país.
+            </p>
+
+            <div class="redes">
+
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../IMG/PNG/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="https://youtube.com" target="_blank">
+                    <img src="../IMG/PNG/youtube.png" alt="YouTube">
+                </a>
+
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../IMG/PNG/instagram.png" alt="Instagram">
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <nav class="footer-col">
+
+            <h3>Navegación</h3>
+
+            <ul>
+
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../HTML/página1.html">Hoteles</a></li>
+                <li><a href="../HTML/página2.html">Reseñas</a></li>
+                <li><a href="../HTML/Destinos.html">Destinos</a></li>
+                <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+
+        <nav class="footer-col">
+
+            <h3>Destinos Populares</h3>
+
+            <ul>
+
+                <li><a href="../HTML/página1.html">Sonsonate</a></li>
+                <li><a href="../HTML/la-libertad.html">La Libertad</a></li>
+                <li><a href="../HTML/usulutan.html">Usulután</a></li>
+                <li><a href="../HTML/santa-ana.html">Santa Ana</a></li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="footer-col">
+
+            <h3>Contacto</h3>
+
+            <p>Hotelscope@gmail.com</p>
+            <p>+503 0000-0000</p>
+            <p>Sonsonate, El Salvador</p>
+
+        </div>
+
+    </footer>
+    <script src="../JS/buscar.js"></script>
+    <script src="../JS/sesion.js"></script>
+    <script src="../JS/reservas.js"></script>
+    <script src="../JS/resenas.js"></script>
+    <script>
+        inicializarFormularioResena("tekapa", "Hotel Tekapa");
+    </script>
+</body>
+
+</html>

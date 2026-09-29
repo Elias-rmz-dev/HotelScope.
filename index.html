@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <!--Inicio de la Parte de Henry-->
+    <head>
+      <meta charset="UTF-8"> 
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Inicio</title>
+         <link rel="stylesheet" type="text/css" href="./CSS/main.css">
+        <link rel="icon" href="./IMG/PNG/HotelScope-Logo.png">
+    </head>
+    <body>
+      
+          <header class="header">
+                
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+       </div>  
+       
+          <nav>
+               <ul class="nav-link">     
+          
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./HTML/página1.html">Hoteles</a></li>
+            <li><a href="./HTML/página2.html">Reseñas</a></li>
+            <li><a href="./HTML/Destinos.html">Destinos</a></li>
+            <li><a href="./HTML/contacto.html">Contacto</a></li>
+          
+               </ul>
+          </nav>
+
+          <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="./IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+          </div>
+
+          <div class="menu-tres-puntos">
+               <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+                <div class="menu-desplegable" id="menuDesplegable">
+                   <button onclick="mostrarMisReservas()">Mis reservas</button>
+                   <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                   <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+          </div>
+
+         </header>
+         <!--Fin de la parte de Henry-->
+<!-- Inicio Hero -->
+
+<section class="hero">
+
+    <div class="hero-texto">
+
+        <h1>
+            Descubre, compara.<br>
+            Elige tu mejor estadía.
+        </h1>
+
+        <p>
+            Lee reseñas y encuentra los mejores
+            hoteles para tu próximo viaje.
+        </p>
+
+    </div>
+
+    <div class="hero-imagen">
+       <a href="./HTML/pág1Decameron.html">
+            <img src="./IMG/PNG/Decameron.jpeg" alt="Imagen del hotel">
+       </a>
+
+    </div>
+     
+     
+
+</section>
+
+<!-- Fin Hero -->
+         <!--Inicio de la parte de Elías-->
+    <section class="hoteles">
+
+    <h2 class="Mejores-hoteles">Hoteles mejor valorados</h2>
+
+    <div class="contenedor-hoteles">
+
+        <div class="card-hotel">
+           <a href="./HTML/pág1Decameron.html">
+            <img src="./IMG/PNG/Decameron.jpeg" alt="Royal Decameron">
+            </a>
+            <h3>Royal Decameron</h3>
+            <p class="precio-card">Desde $145 / noche</p>
+        </div>
+
+        <div class="card-hotel">
+            <a href="./HTML/Pág1ancla.html">
+            <img src="./IMG/PNG/El Ancla.jpeg" alt="El Ancla">
+            </a>
+            <h3>El Ancla</h3>
+            <p class="precio-card">Desde $65 / noche</p>
+        </div>
+
+        <div class="card-hotel">
+            <a href="./HTML/pág1Paraíso.html">
+            <img src="./IMG/PNG/Hotel Paraiso.jpeg" alt="Hotel Paraíso">
+            </a>
+            <h3>Hotel Paraíso</h3>
+            <p class="precio-card">Desde $90 / noche</p>
+        </div>
+
+    </div>
+
+     <div class="contenedor-boton">
+    <a href="./HTML/página1.html">
+        <button class="btn-hoteles"> Explorar mas hoteles</button>
+    </a>
+    
+    </div>
+
+    </div>
+
+</section>
+    
+
+ <!--Fin de la parte de Elías-->
+
+
+        <!-- Inico de parte de Anderson -->
+
+
+    <div class="outer-wrapper">
+        
+        <div class="seccion-gris">
+            
+            <h2 class="titulo-principal">¿Por qué elegir HotelScope?</h2>
+            <div class="linea-amarilla"></div>
+            <div class="contenedor-beneficios">
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.143.147.201.354.153.557l-.833 3.499a.375.375 0 00.527.413l3.507-1.753a.375.375 0 01.33 0c1.2.53 2.53.813 3.923.813z" />
+                        </svg>
+                    </div>
+                    <h3>Reseñas reales</h3>
+                    <p>Opiniones auténticas de viajeros verificados</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.435.744-.435.916 0l2.11 5.326a.445.445 0 00.334.287l5.722.518c.474.043.663.63.318.954l-4.32 4.05a.446.446 0 00-.134.412l1.3 5.631c.107.467-.394.832-.793.572l-4.993-3.266a.446.446 0 00-.472 0L6.26 22.25c-.399.26-.9-.105-.793-.572l1.3-5.632a.446.446 0 00-.134-.412l-4.32-4.05c-.345-.324-.156-.91.318-.954l5.722-.518a.445.445 0 00.334-.287l2.11-5.326z" />
+                        </svg>
+                    </div>
+                    <h3>Mejores decisiones</h3>
+                    <p>Compara hoteles y elige con confianza</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                    </div>
+                    <h3>Destinos increíbles</h3>
+                    <p>Encuentras opciones en los destinos del país</p>
+                </div>
+                
+                <div class="beneficio">
+                    <div class="icono-circulo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751A11.956 11.956 0 0112 2.714z" />
+                        </svg>
+                    </div>
+                    <h3>Seguro y confiable</h3>
+                    <p>Tu información está protegida en todo momento</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<!-- Fin de la parte de Anderson-->
+           <!-- Inicio de la parte de Elías -->
+
+ <footer class="footer">
+
+    <div class="footer-col">
+
+        <img src="./IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+        <p>
+            La plataforma de reseñas de hoteles que te ayuda a encontrar
+            experiencias increíbles en cualquier lugar del país.
+        </p>
+
+        <div class="redes">
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="./IMG/PNG/facebook.png" alt="Facebook">
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+                <img src="./IMG/PNG/youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://instagram.com" target="_blank">
+                <img src="./IMG/PNG/instagram.png" alt="Instagram">
+            </a>
+
+        </div>
+
+    </div>
+
+    <nav class="footer-col">
+
+        <h3>Navegación</h3>
+
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./HTML/página1.html">Hoteles</a></li>
+            <li><a href="./HTML/página2.html">Reseñas</a></li>
+            <li><a href="./HTML/">Destinos</a></li>
+            <li><a href="./HTML/contacto.html">Contacto</a></li>
+        </ul>
+
+    </nav>
+
+    <nav class="footer-col">
+
+        <h3>Destinos Populares</h3>
+
+         <ul>
+            <li><a href="./HTML/página1.html">Sonsonate</a></li>
+            <li><a href="./HTML/la-libertad.html">La Libertad</a></li>
+            <li><a href="./usulutan.html">Usulután</a></li>
+            <li><a href="./HTML/santa-ana.html">Santa Ana</a></li>
+        </ul>
+
+    </nav>
+
+    
+    <div class="footer-col">
+
+        <h3>Contacto</h3>
+
+        <p>Hotelscope@gmail.com</p>
+        <p>+503 0000-0000</p>
+        <p>Sonsonate, El Salvador</p>
+
+    </div>
+
+</footer>
+
+   <!-- Final de la parte de Elías -->
+    
+       <script src="./JS/buscar.js"></script>
+       <script src="./JS/sesion.js"></script>
+       <script src="./JS/reservas.js"></script>
+       <script src="./JS/resenas.js"></script>
+    </body>
+</html>

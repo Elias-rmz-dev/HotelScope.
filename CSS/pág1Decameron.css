@@ -1,0 +1,1624 @@
+/*Inicio de la partde de Henry*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: #fff;
+}
+ header{
+    background-color: #8a8a8a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 20px 30px;
+ }
+
+ .header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+ .header .logo{
+    cursor: pointer;
+ }
+
+ .header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+ }
+
+ .header .logo img:hover{
+    transform: scale(1.2);
+ }
+
+ .header .nav-link{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+ }
+
+ .header .nav{
+   flex: 1;
+   display: flex;
+   justify-content: center;
+ }
+
+ .header .nav-link li{
+    display: inline-block;
+    padding: 0 20px;
+ }
+
+a{
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+
+ }
+
+ li{
+   text-decoration: none;
+ }
+
+
+ #logo{
+   margin-left: 40px;
+   margin-right: 20px;
+ }
+
+ .header .nav-link li a{
+    transition: all .3s ease;
+}
+
+.header .nav-link li a:hover{
+    color: #D4AF37;
+}
+
+.header .nav-link li a:hover{
+    color: #D4AF37;
+    border-bottom: 3px solid #D4AF37;
+    padding-bottom: 6px;
+}
+
+.header nav{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.buscar-icono img{
+    width:50px;
+    height:50px;
+    cursor:pointer;
+}
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.buscar-icono img:hover{
+    transform:scale(1.1);
+    transition:.3s;
+}
+
+.btn button{
+
+    background:#fff;
+
+    color:#000;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn button:hover{
+    transform:scale(1.1);
+    transition:.3s;
+    background-color: #D4AF37;
+    color: #fff;
+}
+/*Buscar*/
+.busqueda-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.input-buscar{
+    width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    opacity: 0;
+    transition: width 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+}
+
+.input-buscar.activo{
+    width: 220px;
+    padding: 8px 15px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+#sin-resultados{
+    text-align: center;
+    color: #8a8a8a;
+    font-size: 22px;
+    margin: 40px 0;
+}
+
+/*Fin de la parte de Henry*/
+/* =======================
+   CONTENEDOR GENERAL
+======================= */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+
+.title{
+    font-size: 45px;
+    font-weight: bold;
+    margin: 30px 0 10px 60px;
+}
+
+/* =======================
+   UBICACIÓN
+======================= */
+
+.hotel-ubicacion{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 60px;
+    color: #666;
+    font-size: 15px;
+}
+
+.icono-ubicacion{
+    width: 18px;
+    height: 18px;
+}
+
+.mostrar-mapa{
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mostrar-mapa:hover{
+    text-decoration: underline;
+}
+
+/* =======================
+   CALIFICACIÓN
+======================= */
+
+.hotel-calificacion{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 30px 60px;
+    font-size: 18px;
+}
+
+.nota{
+    background: #d9d9d9;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.punto{
+    color: #888;
+}
+
+/* =======================
+   CONTENIDO PRINCIPAL
+======================= */
+
+.contenido-hotel{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 90%;
+    margin: 0 auto 40px auto;
+}
+
+/* =======================
+   IMAGEN
+======================= */
+
+.hotel-imagen{
+    flex-shrink: 0;
+}
+
+.hotel-imagen img{
+    width: 760px;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* =======================
+   BENEFICIOS
+======================= */
+
+.seccion-gris{
+    background: transparent;
+}
+
+.contenedor-beneficios{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    gap: 15px;
+}
+
+.beneficio{
+    width: 200px;
+    height: 165px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.icono-circulo{
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.icono-circulo img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.beneficio p{
+    width: 90%;
+    text-align: center;
+    color: #444;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+@media(max-width:1100px){
+
+    .contenido-hotel{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hotel-imagen img{
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+    }
+
+    .contenedor-beneficios{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .contenedor-beneficios{
+        grid-template-columns: 1fr;
+    }
+
+    .beneficio{
+        width: 100%;
+    }
+
+}
+/* =========================
+   RESEÑAS
+========================= */
+
+.reseñas{
+    width: 95%;
+    margin: 35px auto 50px auto;
+}
+
+.titulo-resenas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-resenas h2{
+    font-size: 28px;
+    color: #222;
+}
+
+.titulo-resenas a{
+    color: #333;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+
+/* CONTENEDOR DE TARJETAS */
+
+.contenedor-hoteles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* TARJETA */
+
+.card-reseñas{
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 185px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+
+/* ENCABEZADO */
+
+.encabezado-resena{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+
+/* AVATAR */
+
+.avatar{
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #eee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* DATOS */
+
+.datos-resena{
+    flex: 1;
+}
+
+.datos-resena h3{
+    font-size: 17px;
+    margin-bottom: 3px;
+    color: #222;
+}
+
+.datos-resena span{
+    font-size: 13px;
+    color: #555;
+}
+
+
+/* ESTRELLAS */
+
+.estrellas{
+    color: #e6b800;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+
+/* OPINIÓN */
+
+.parrafo-opinion{
+    color: #333;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .contenedor-hoteles{
+        grid-template-columns: 1fr;
+    }
+
+}
+/*Inicio de la parte de Elias*/
+.footer{
+    background-color: #8A8A8A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 45px;
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
+}
+
+.footer-col{
+    width: 210px;
+    text-align: left;
+}
+
+.logo{
+    width: 170px;
+    margin-bottom: 5px;
+}
+
+.footer h3{
+    color: gold;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.footer p,
+.footer a,
+.footer li{
+    color: white;
+    text-decoration: none;
+    line-height: 1.6;
+    font-size: 15px;
+    font-family: Arial;
+}
+.footer ul a{
+    transition: color 0.2s ease;
+
+}
+.footer ul a:hover{
+    color: gold;
+}
+
+.footer ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li{
+    margin-bottom: 5px;
+}
+
+.redes{
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.redes img{
+    width: 36px;
+    height: 36px;
+    margin-right: 0;
+    transition: all 0.3s;
+} 
+.redes img:hover{
+  transform: scale(1.2);
+
+}
+
+
+/* =========================================================
+   Lo nuevo: menú de tres puntos, reserva, "Mis reservas" y responsive
+   ========================================================= */
+
+/* ---------- Menú de tres puntos (esta página no lo tenía) ---------- */
+
+.menu-tres-puntos{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.boton-tres-puntos{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: .3s;
+}
+
+.boton-tres-puntos:hover{
+    color: #D4AF37;
+    transform: scale(1.1);
+}
+
+.menu-desplegable{
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 1001;
+}
+
+.menu-desplegable.mostrar{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-desplegable button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.menu-desplegable button:hover{
+    background-color: #eeeeee;
+    color: #D4AF37;
+}
+
+/* Horario check-in / check-out */
+.horario-hotel{
+    margin: 8px 0 25px 60px;
+    color: #666;
+    font-size: 15px;
+}
+
+
+/* ---------- Sección de reserva (formulario simulado) ---------- */
+
+.seccion-reserva{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 45px auto;
+}
+
+.titulo-reserva{
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 18px;
+}
+
+.caja-reserva{
+    display: flex;
+    gap: 30px;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.formulario-reserva{
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.campo-reserva{
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-reserva label{
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.campo-reserva input,
+.campo-reserva select{
+    font-size: 16px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+.campo-reserva input:focus,
+.campo-reserva select:focus{
+    border-color: #D4AF37;
+}
+
+.btn-confirmar-reserva{
+    grid-column: 1 / -1;
+    background-color: #D4AF37;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-confirmar-reserva:hover{
+    background-color: #b8952c;
+    transform: scale(1.02);
+}
+
+.mensaje-reserva{
+    grid-column: 1 / -1;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+.mensaje-reserva.error{
+    color: #c0392b;
+}
+
+.mensaje-reserva.exito{
+    color: #1e7e34;
+    font-weight: 600;
+}
+
+.resumen-lateral{
+    flex: 1;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.precio-noche{
+    font-size: 26px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.precio-noche span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+.horario-resumen{
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 14px;
+}
+
+.resumen-reserva p{
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.resumen-reserva .total-reserva{
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+
+/* ---------- Panel "Mis reservas" ---------- */
+
+.overlay-reservas{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-reservas{
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado-modal-reservas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: #8a8a8a;
+}
+
+.encabezado-modal-reservas h2{
+    color: #fff;
+    font-size: 22px;
+}
+
+.cerrar-modal-reservas{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.cuerpo-modal-reservas{
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sin-reservas{
+    text-align: center;
+    color: #888;
+    padding: 30px 0;
+}
+
+.card-mi-reserva{
+    display: flex;
+    gap: 14px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.card-mi-reserva img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.datos-mi-reserva{
+    flex: 1;
+}
+
+.datos-mi-reserva h3{
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.datos-mi-reserva p{
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.total-mi-reserva{
+    font-weight: 700;
+    color: #222;
+}
+
+.btn-cancelar-reserva{
+    background: #fff;
+    border: 2px solid red;
+    color: red;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+    flex-shrink: 0;
+}
+
+.btn-cancelar-reserva:hover{
+    background: #c0392b;
+    color: #fff;
+}
+
+/* =========================================================
+RESPONSIVE COMPLETO - PÁGINA DE HOTEL
+========================================================= */
+
+/* =========================================================
+TABLETS - hasta 1000px
+========================================================= */
+
+@media (max-width: 1000px){
+
+/* ---------- NAVBAR ---------- */
+
+header.header{
+    height: auto;
+    min-height: 85px;
+    padding: 12px 20px;
+    gap: 10px;
+}
+
+.header .logo img{
+    height: 60px;
+    width: auto;
+}
+
+.header nav{
+    flex: 1;
+    min-width: 0;
+}
+
+.header .nav-link{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.header .nav-link li{
+    padding: 0 7px;
+}
+
+.header .nav-link li a{
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* ---------- BUSCADOR ---------- */
+
+.acciones{
+    gap: 8px;
+}
+
+.buscar-icono img{
+    width: 42px;
+    height: 42px;
+}
+
+.input-buscar.activo{
+    width: 170px;
+}
+
+/* ---------- TRES PUNTOS ---------- */
+
+.menu-tres-puntos{
+    margin-left: 5px;
+}
+
+
+/* =====================================================
+   CONTENIDO DEL HOTEL
+   ===================================================== */
+
+.title{
+    font-size: 38px;
+    margin: 30px 30px 10px;
+}
+
+.hotel-ubicacion{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.hotel-calificacion{
+    margin-left: 30px;
+    margin-right: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.horario-hotel{
+    margin-left: 30px;
+}
+
+.contenido-hotel{
+    width: 92%;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.hotel-imagen{
+    width: 100%;
+}
+
+.hotel-imagen img{
+    width: 100%;
+    max-width: 850px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.contenedor-beneficios{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.beneficio{
+    width: 100%;
+}
+
+
+/* =====================================================
+   RESEÑAS
+   ===================================================== */
+
+.reseñas{
+    width: 92%;
+    margin: 35px auto 45px;
+}
+
+.contenedor-hoteles{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card-reseñas{
+    padding: 18px;
+}
+
+
+/* =====================================================
+   RESERVA
+   ===================================================== */
+
+.seccion-reserva{
+    width: 92%;
+}
+
+.caja-reserva{
+    gap: 20px;
+    padding: 22px;
+}
+
+.formulario-reserva{
+    gap: 12px;
+}
+
+.resumen-lateral{
+    padding: 16px;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer{
+    gap: 25px;
+    padding: 35px 20px;
+}
+
+.footer-col{
+    width: 200px;
+}
+
+}
+
+/* =========================================================
+CELULARES - hasta 700px
+========================================================= */
+
+@media (max-width: 700px){
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+header.header{
+    height: auto;
+    min-height: 75px;
+    padding: 10px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.header .logo{
+    flex-shrink: 0;
+}
+
+.header .logo img{
+    height: 55px;
+    width: auto;
+}
+
+/*
+   La navegación pasa a una segunda fila.
+   Se mantienen los mismos enlaces, colores y estilos.
+*/
+
+.header nav{
+    order: 3;
+    width: 100%;
+    flex: none;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 4px;
+}
+
+.header .nav-link{
+    width: max-content;
+    display: flex;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 0 auto;
+}
+
+.header .nav-link li{
+    padding: 0 9px;
+}
+
+.header .nav-link li a{
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.header .nav-link li a:hover{
+    padding-bottom: 4px;
+}
+
+
+/* =====================================================
+   BUSCADOR
+   ===================================================== */
+
+.acciones{
+    margin-left: auto;
+    gap: 5px;
+}
+
+.buscar-icono img{
+    width: 40px;
+    height: 40px;
+}
+
+.input-buscar.activo{
+    position: absolute;
+    top: 68px;
+    right: 55px;
+    width: calc(100vw - 110px);
+    max-width: 260px;
+    padding: 8px 12px;
+    margin-right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+    z-index: 1002;
+}
+
+
+/* =====================================================
+   MENÚ TRES PUNTOS
+   ===================================================== */
+
+.menu-tres-puntos{
+    margin-left: 0;
+}
+
+.boton-tres-puntos{
+    font-size: 30px;
+    padding: 4px 7px;
+}
+
+.menu-desplegable{
+    top: 43px;
+    right: 0;
+    width: 170px;
+}
+
+
+/* =====================================================
+   INFORMACIÓN DEL HOTEL
+   ===================================================== */
+
+.title{
+    font-size: 30px;
+    margin: 25px 20px 10px;
+    line-height: 1.2;
+}
+
+.hotel-ubicacion{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.hotel-calificacion{
+    margin: 15px 20px 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+
+.nota{
+    font-size: 18px;
+    padding: 7px 10px;
+}
+
+.horario-hotel{
+    margin: 8px 20px 20px;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   IMAGEN Y BENEFICIOS
+   ===================================================== */
+
+.contenido-hotel{
+    width: 94%;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.hotel-imagen{
+    width: 100%;
+}
+
+.hotel-imagen img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.contenedor-beneficios{
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.beneficio{
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+}
+
+.icono-circulo{
+    width: 55px;
+    height: 55px;
+    margin-bottom: 5px;
+}
+
+.icono-circulo img{
+    width: 34px;
+    height: 34px;
+}
+
+.beneficio p{
+    width: 95%;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   RESEÑAS
+   ===================================================== */
+
+.reseñas{
+    width: 94%;
+    margin: 25px auto 40px;
+}
+
+.titulo-resenas{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.titulo-resenas h2{
+    font-size: 24px;
+}
+
+.titulo-resenas a{
+    font-size: 14px;
+}
+
+.contenedor-hoteles{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card-reseñas{
+    width: 100%;
+    min-height: auto;
+    padding: 16px;
+}
+
+.encabezado-resena{
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.datos-resena h3{
+    font-size: 16px;
+}
+
+.datos-resena span{
+    font-size: 12px;
+}
+
+.estrellas{
+    font-size: 15px;
+}
+
+.parrafo-opinion{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SECCIÓN DE RESERVA
+   ===================================================== */
+
+.seccion-reserva{
+    width: 94%;
+    margin-bottom: 35px;
+}
+
+.titulo-reserva{
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.caja-reserva{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 18px;
+}
+
+.formulario-reserva{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
+}
+
+.campo-reserva input,
+.campo-reserva select{
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.btn-confirmar-reserva{
+    grid-column: 1;
+    width: 100%;
+    font-size: 16px;
+}
+
+.mensaje-reserva{
+    grid-column: 1;
+}
+
+.resumen-lateral{
+    width: 100%;
+}
+
+
+/* =====================================================
+   BOTONES
+   ===================================================== */
+
+.contenedor-boton{
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.btn-hoteles{
+    padding: 12px 25px;
+    font-size: 16px;
+    max-width: 90%;
+}
+
+
+/* =====================================================
+   MODAL DE RESERVAS
+   ===================================================== */
+
+.overlay-reservas{
+    padding: 12px;
+}
+
+.modal-reservas{
+    width: 100%;
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+}
+
+.encabezado-modal-reservas{
+    padding: 15px;
+}
+
+.encabezado-modal-reservas h2{
+    font-size: 19px;
+}
+
+.cuerpo-modal-reservas{
+    padding: 14px;
+}
+
+.card-mi-reserva{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-mi-reserva img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.datos-mi-reserva{
+    width: 100%;
+}
+
+.btn-cancelar-reserva{
+    width: 100%;
+    text-align: center;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+/*
+   Se mantiene el mismo color, logo, enlaces y contenido.
+   Solo se cambia la distribución para que se adapte al celular.
+*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    padding: 35px 20px;
+}
+
+.footer-col{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.footer-col .logo{
+    width: 160px;
+    height: auto;
+}
+
+.footer h3{
+    font-size: 18px;
+}
+
+.footer p,
+.footer a,
+.footer li{
+    font-size: 14px;
+}
+
+.footer ul{
+    text-align: center;
+}
+
+.redes{
+    justify-content: center;
+}
+
+}
+
+/* =========================================================
+CELULARES PEQUEÑOS - hasta 400px
+========================================================= */
+
+@media (max-width: 400px){
+
+/* ---------- NAVBAR ---------- */
+
+header.header{
+    padding: 8px;
+}
+
+.header .logo img{
+    height: 48px;
+}
+
+.buscar-icono img{
+    width: 36px;
+    height: 36px;
+}
+
+.boton-tres-puntos{
+    font-size: 27px;
+}
+
+.header .nav-link li{
+    padding: 0 7px;
+}
+
+.header .nav-link li a{
+    font-size: 13px;
+}
+
+.input-buscar.activo{
+    top: 62px;
+    right: 45px;
+    width: calc(100vw - 85px);
+}
+
+
+/* ---------- HOTEL ---------- */
+
+.title{
+    font-size: 26px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.hotel-ubicacion{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.hotel-calificacion{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.horario-hotel{
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.contenido-hotel{
+    width: 94%;
+}
+
+.hotel-imagen img{
+    height: 200px;
+}
+
+.contenedor-beneficios{
+    grid-template-columns: 1fr;
+}
+
+.beneficio{
+    height: 140px;
+}
+
+.beneficio p{
+    font-size: 14px;
+}
+
+
+/* ---------- RESEÑAS ---------- */
+
+.reseñas{
+    width: 94%;
+}
+
+.titulo-resenas h2{
+    font-size: 22px;
+}
+
+.card-reseñas{
+    padding: 14px;
+}
+
+.parrafo-opinion{
+    font-size: 14px;
+}
+
+
+/* ---------- RESERVA ---------- */
+
+.caja-reserva{
+    padding: 14px;
+}
+
+.titulo-reserva{
+    font-size: 22px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    padding: 30px 15px;
+}
+
+.footer-col{
+    max-width: 280px;
+}
+
+.footer-col .logo{
+    width: 150px;
+}
+
+}

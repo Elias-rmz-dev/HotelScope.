@@ -1,0 +1,1464 @@
+*{ 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 20px; 
+} 
+ 
+body{ 
+    background-color: #fff; 
+} 
+
+header{ 
+    background-color: #8a8a8a; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 85px; 
+    padding: 20px 30px; 
+} 
+ 
+.header{ 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+} 
+ 
+.header .logo{ 
+    cursor: pointer; 
+} 
+ 
+.header .logo img{ 
+    height: 70px; 
+    width: auto; 
+    transition: all 0.3s; 
+} 
+ 
+.header .logo img:hover{ 
+    transform: scale(1.2); 
+} 
+ 
+.header .nav-link{ 
+    list-style: none; 
+    display: flex; 
+    gap: 10px; 
+} 
+ 
+.header .nav{ 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+} 
+ 
+.header .nav-link li{ 
+    display: inline-block; 
+    padding: 0 20px; 
+} 
+ 
+a{ 
+    font-weight: 500; 
+    color:#fff; 
+    text-decoration: none; 
+} 
+ 
+li{ 
+    text-decoration: none; 
+} 
+ 
+#logo{ 
+    margin-left: 40px; 
+    margin-right: 20px; 
+} 
+ 
+.header .nav-link li a{ 
+    transition: all .3s ease; 
+} 
+ 
+.header .nav-link li a:hover{ 
+    color: #D4AF37; 
+    border-bottom: 3px solid #D4AF37; 
+    padding-bottom: 6px; 
+} 
+ 
+.header nav{ 
+    flex:1; 
+    display:flex; 
+    justify-content:center; 
+} 
+ 
+.acciones{ 
+    display:flex; 
+    align-items:center; 
+    gap:20px; 
+} 
+ 
+.buscar-icono img{ 
+    width:50px; 
+    height:50px; 
+    cursor:pointer; 
+} 
+ 
+.buscar-icono img:hover{ 
+    transform:scale(1.1); 
+    transition:.3s; 
+} 
+ 
+.btn button{ 
+    background:#fff; 
+    color:#000; 
+    border:none; 
+    border-radius:8px; 
+    padding:10px 18px; 
+    cursor:pointer; 
+    transition:.3s; 
+} 
+ 
+.btn button:hover{ 
+    transform:scale(1.1); 
+    transition:.3s; 
+    background-color: #D4AF37; 
+    color: #fff; 
+}
+
+/*Buscar*/
+.busqueda-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.input-buscar{
+    width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    opacity: 0;
+    transition: width 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+}
+
+.input-buscar.activo{
+    width: 220px;
+    padding: 8px 15px;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+#sin-resultados{
+    text-align: center;
+    color: #8a8a8a;
+    font-size: 22px;
+    margin: 40px 0;
+}
+/*Menú tres puntos*/
+.menu-tres-puntos{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+.boton-tres-puntos{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: .3s;
+}
+.boton-tres-puntos:hover{
+    color: #D4AF37;
+    transform: scale(1.1);
+}
+.menu-desplegable{
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index: 1001;
+}
+.menu-desplegable.mostrar{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.menu-desplegable button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.menu-desplegable button:hover{
+    background-color: #eeeeee;
+    color: #D4AF37;
+}
+.overlay-reservas{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+.modal-reservas{
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.encabezado-modal-reservas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: #8a8a8a;
+}
+.encabezado-modal-reservas h2{
+    color: #fff;
+    font-size: 22px;
+}
+.cerrar-modal-reservas{
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+}
+.cuerpo-modal-reservas{
+    padding: 20px;
+    overflow-y: auto;
+}
+.sin-reservas{
+    text-align: center;
+    color: #888;
+    padding: 30px 0;
+}
+.card-mi-reserva{
+    display: flex;
+    gap: 14px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+.card-mi-reserva img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.datos-mi-reserva{ flex: 1; }
+.datos-mi-reserva h3{ font-size: 17px; margin-bottom: 4px; }
+.datos-mi-reserva p{ font-size: 13px; color: #555; line-height: 1.4; }
+.btn-cancelar-reserva{
+    background: #fff;
+    border: 2px solid red;
+    color: red;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+    flex-shrink: 0;
+}
+.btn-cancelar-reserva:hover{ background: #c0392b; color: #fff; }
+/*Fin de la parte de Henry*/
+
+/* ================================= */
+/* CONTENEDOR CONTACTO */
+/* ================================= */
+
+.contacto { 
+    width: 100%; 
+    max-width: 1262px; 
+    height: 710px; 
+    margin: auto; 
+    position: relative; 
+}
+
+
+/* ================================= */
+/* TÍTULO */
+/* ================================= */
+
+.titulo { 
+    position: absolute; 
+    top: 7px; 
+    left: 0; 
+    width: 100%; 
+    text-align: center; 
+} 
+ 
+.titulo h1 { 
+    font-size: 50px; 
+    font-weight: 700; 
+    line-height: 1; 
+    margin: 10px 0 0; 
+} 
+ 
+.linea-superior { 
+    display: block; 
+    width: 82px; 
+    height: 4px; 
+    background: #f5b323; 
+    margin: 0 auto 5px; 
+    transform: scaleX(0.3); 
+    transform-origin: center; 
+    transition: transform 0.4s ease; 
+} 
+ 
+.linea-inferior { 
+    display: block; 
+    width: 207px; 
+    height: 4px; 
+    background: #f5b323; 
+    margin: 7px auto 0; 
+    transform: scaleX(0.3); 
+    transform-origin: center; 
+    transition: transform 0.4s ease; 
+} 
+ 
+.titulo:hover .linea-superior, 
+.titulo:hover .linea-inferior { 
+    transform: scaleX(1); 
+}
+
+
+/* ================================= */
+/* DESCRIPCIÓN */
+/* ================================= */
+
+.descripcion { 
+    font-family: Arial, sans-serif; 
+    position: absolute; 
+    top: 80px; 
+    left: 0; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 21px; 
+    font-weight: 700; 
+    line-height: 1.3; 
+    margin: 0; 
+}
+
+
+/* ================================= */
+/* FORMULARIO */
+/* ================================= */
+
+.formulario { 
+    position: absolute; 
+    left: 10.5%; 
+    top: 139px; 
+    width: 555px; 
+    height: 383px; 
+    background: white; 
+    border-radius: 10px; 
+    padding: 28px 30px; 
+    box-sizing: border-box; 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07); 
+}
+
+
+/* ETIQUETAS */
+
+.formulario label { 
+    display: block; 
+    font-size: 17px; 
+    font-weight: 700; 
+    margin-bottom: 6px; 
+}
+
+
+/* CAMPOS */
+
+.campo { 
+    display: flex; 
+    align-items: center; 
+    width: 100%; 
+    height: 42px; 
+    margin-bottom: 14px; 
+    background: #f5f8fb; 
+    border: 1px solid #d8e0e8; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+
+/* ICONOS */
+
+.campo img { 
+    width: 42px; 
+    height: 42px; 
+    object-fit: contain; 
+    padding: 11px; 
+    box-sizing: border-box; 
+}
+
+
+/* INPUT */
+
+.campo input { 
+    flex: 1; 
+    height: 100%; 
+    border: none; 
+    outline: none; 
+    background: transparent; 
+    padding: 0 10px; 
+    font-size: 15px; 
+} 
+ 
+.campo input::placeholder, 
+.campo textarea::placeholder { 
+    color: #9ba8b5; 
+}
+
+
+/* MENSAJE DEL FORMULARIO */
+
+.mensaje-campo { 
+    height: 82px; 
+    align-items: flex-start; 
+} 
+ 
+.mensaje-campo img { 
+    flex-shrink: 0; 
+} 
+ 
+.campo textarea { 
+    flex: 1; 
+    height: 100%; 
+    resize: none; 
+    border: none; 
+    outline: none; 
+    background: transparent; 
+    padding: 10px; 
+    font-family: inherit; 
+    font-size: 15px; 
+}
+
+
+/* ================================= */
+/* BOTÓN ENVIAR */
+/* ================================= */
+
+.formulario button { 
+    width: 100%; 
+    height: 43px; 
+    border: none; 
+    border-radius: 8px; 
+    background: #ffb51b; 
+    color: #142f50; 
+    font-size: 17px; 
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: 0.3s ease; 
+} 
+ 
+.formulario button span { 
+    margin-right: 7px; 
+} 
+ 
+.formulario button:hover { 
+    background: #f5a900; 
+    transform: translateY(-2px); 
+}
+
+
+/* ================================= */
+/* INFORMACIÓN */
+/* ================================= */
+
+.informacion { 
+    position: absolute; 
+    left: 58.7%; 
+    top: 177px; 
+    width: 450px; 
+} 
+
+
+/* TÍTULO INFORMACIÓN */
+
+.info-titulo { 
+    position: relative; 
+    margin-bottom: 31px; 
+} 
+ 
+.info-titulo h2 { 
+    font-size: 25px; 
+    font-weight: 700; 
+    margin: 0 0 0 5px; 
+} 
+ 
+.linea-info { 
+    position: absolute; 
+    left: 5px; 
+    top: 34px; 
+    width: 35px; 
+    height: 4px; 
+    background: #f5b323; 
+    transform: scaleX(0.3); 
+    transform-origin: left; 
+    transition: transform 0.4s ease; 
+} 
+ 
+.info-titulo:hover .linea-info { 
+    transform: scaleX(1); 
+}
+
+
+/* DATOS */
+
+.dato { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 16px; 
+} 
+ 
+.dato img { 
+    width: 62px; 
+    height: 62px; 
+    margin-right: 10px; 
+    transition: 0.3s ease; 
+} 
+ 
+.dato img:hover { 
+    transform: scale(1.15); 
+} 
+ 
+.dato h3 { 
+    font-size: 17px; 
+    font-weight: 700; 
+    margin: 0 0 2px; 
+} 
+ 
+.dato p { 
+    font-size: 16px; 
+    font-weight: 500; 
+    margin: 0; 
+}
+
+
+/* ================================= */
+/* MAPA */
+/* ================================= */
+
+.mapa { 
+    position: absolute; 
+    left: 58.7%; 
+    top: 382px; 
+    width: 470px; 
+    height: 190px; 
+    border-radius: 8px; 
+    overflow: hidden; 
+} 
+ 
+.mapa iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+}
+
+
+/* ================================= */
+/* MENSAJE FINAL */
+/* ================================= */
+
+.mensaje-final { 
+    font-family: Arial, sans-serif; 
+    position: absolute; 
+    left: 0; 
+    top: 590px; 
+    width: 100%; 
+    min-height: 90px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    text-align: left; 
+    padding: 0 10.5%; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07); 
+} 
+ 
+.mensaje-final h2 { 
+    font-family: Arial, sans-serif; 
+    font-size: 35px; 
+    font-weight: 700; 
+    margin: 0; 
+    white-space: nowrap; 
+} 
+ 
+.mensaje-final p { 
+    font-family: Arial, sans-serif; 
+    font-size: 18px; 
+    font-weight: 500; 
+    line-height: 1.4; 
+    margin: 0; 
+    max-width: 500px; 
+}
+
+
+/* ================================= */
+/* FOOTER */
+/* ================================= */
+
+.footer{ 
+    background-color: #8A8A8A; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    gap: 45px; 
+    width: 100%; 
+    padding: 35px 20px; 
+    box-sizing: border-box; 
+} 
+ 
+.footer-col{ 
+    width: 210px; 
+    text-align: left; 
+} 
+ 
+.logo{ 
+    width: 170px; 
+    margin-bottom: 5px; 
+} 
+ 
+.footer h3{ 
+    color: gold; 
+    margin-bottom: 12px; 
+    font-size: 18px; 
+    font-family: Arial; 
+} 
+ 
+.footer p, 
+.footer a, 
+.footer li{ 
+    color: white; 
+    text-decoration: none; 
+    line-height: 1.6; 
+    font-size: 15px; 
+    font-family: Arial; 
+} 
+ 
+.footer ul a{ 
+    transition: color 0.2s ease; 
+} 
+ 
+.footer ul a:hover{ 
+    color: gold; 
+} 
+ 
+.footer ul{ 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+} 
+ 
+.footer li{ 
+    margin-bottom: 5px; 
+} 
+ 
+.redes{ 
+    margin-top: 12px; 
+    display: flex; 
+    gap: 10px; 
+} 
+ 
+.redes img{ 
+    width: 36px; 
+    height: 36px; 
+    margin-right: 0; 
+    transition: all 0.3s; 
+} 
+ 
+.redes img:hover{ 
+    transform: scale(1.2); 
+}
+
+
+/* Notificación */
+.mensaje-exito{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 350px;
+    padding: 15px 20px;
+    background-color: #8a8a8a;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mensaje-exito.mostrar{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================================================
+RESPONSIVE - CONTACTO
+Mantiene NAVBAR y FOOTER iguales a DESTINOS
+========================================================= */
+
+/* =========================================================
+TABLETS
+1024px o menos
+========================================================= */
+
+@media (max-width: 1024px) {
+
+/* =========================
+   HEADER - IGUAL A DESTINOS
+   ========================= */
+
+header {
+    height: auto;
+    min-height: 85px;
+    padding: 15px 20px;
+    gap: 10px;
+}
+
+.header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+.header nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav-link {
+    gap: 0;
+    justify-content: center;
+}
+
+.header .nav-link li {
+    padding: 0 10px;
+}
+
+.header .nav-link li a {
+    font-size: 16px;
+}
+
+.acciones {
+    gap: 10px;
+}
+
+.buscar-icono img {
+    width: 42px;
+    height: 42px;
+}
+
+.input-buscar.activo {
+    width: 180px;
+}
+
+.menu-tres-puntos {
+    margin-left: 5px;
+}
+
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+.contacto {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 900px;
+    padding: 0 30px 50px;
+}
+
+.titulo {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding-top: 20px;
+}
+
+.titulo h1 {
+    font-size: 42px;
+}
+
+.descripcion {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 20px auto 30px;
+    font-size: 19px;
+}
+
+.formulario {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 55%;
+    height: auto;
+    min-height: 383px;
+    margin: 0;
+    padding: 28px 25px;
+}
+
+.informacion {
+    position: absolute;
+    left: 60%;
+    top: 180px;
+    width: 37%;
+}
+
+.mapa {
+    position: absolute;
+    left: 60%;
+    top: 410px;
+    width: 37%;
+    height: 190px;
+}
+
+.mensaje-final {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 120px;
+    margin-top: 35px;
+    padding: 25px 5%;
+    gap: 25px;
+}
+
+.mensaje-final h2 {
+    font-size: 28px;
+    white-space: normal;
+}
+
+.mensaje-final p {
+    font-size: 16px;
+    max-width: 450px;
+}
+
+
+/* =========================
+   FOOTER - IGUAL A DESTINOS
+   ========================= */
+
+.footer {
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.footer-col {
+    width: 200px;
+}
+
+}
+
+/* =========================================================
+CELULARES
+768px o menos
+========================================================= */
+
+@media (max-width: 768px) {
+
+/* =========================
+   HEADER - IGUAL A DESTINOS
+   ========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    min-height: auto;
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header .logo {
+    order: 1;
+}
+
+.header .logo img {
+    height: 55px;
+    width: auto;
+}
+
+.header nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 8px 0 3px;
+}
+
+.header .nav-link {
+    width: max-content;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 0 auto;
+}
+
+.header .nav-link li {
+    padding: 0 9px;
+}
+
+.header .nav-link li a {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.acciones {
+    order: 2;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.buscar-icono img {
+    width: 38px;
+    height: 38px;
+}
+
+.menu-tres-puntos {
+    order: 2;
+    margin-left: 0;
+}
+
+.boton-tres-puntos {
+    font-size: 28px;
+    padding: 5px 7px;
+}
+
+.menu-desplegable {
+    top: 40px;
+    right: 0;
+    width: 160px;
+}
+
+.menu-desplegable button {
+    font-size: 14px;
+}
+
+.input-buscar.activo {
+    position: absolute;
+    top: 70px;
+    right: 45px;
+    width: 190px;
+    z-index: 1100;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+.contacto {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 35px 20px 50px;
+}
+
+.titulo {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+}
+
+.titulo h1 {
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.linea-superior {
+    width: 70px;
+}
+
+.linea-inferior {
+    width: 170px;
+}
+
+.descripcion {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 20px auto 30px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto 35px;
+    padding: 25px 20px;
+}
+
+.formulario label {
+    font-size: 16px;
+}
+
+.campo {
+    height: 44px;
+    margin-bottom: 14px;
+}
+
+.campo input,
+.campo textarea {
+    font-size: 14px;
+}
+
+.mensaje-campo {
+    height: 100px;
+}
+
+.formulario button {
+    height: 45px;
+    font-size: 16px;
+}
+
+
+/* INFORMACIÓN */
+
+.informacion {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin: 0 auto 30px;
+}
+
+.info-titulo {
+    margin-bottom: 30px;
+}
+
+.info-titulo h2 {
+    font-size: 24px;
+    margin-left: 0;
+}
+
+.linea-info {
+    left: 0;
+}
+
+.dato {
+    margin-bottom: 15px;
+}
+
+.dato img {
+    width: 55px;
+    height: 55px;
+    margin-right: 12px;
+}
+
+.dato h3 {
+    font-size: 16px;
+}
+
+.dato p {
+    font-size: 15px;
+}
+
+
+/* MAPA */
+
+.mapa {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 250px;
+    margin: 10px auto 35px;
+}
+
+
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 25px 20px;
+    margin: 0;
+    gap: 10px;
+}
+
+.mensaje-final h2 {
+    font-size: 27px;
+    white-space: normal;
+}
+
+.mensaje-final p {
+    font-size: 16px;
+    max-width: 100%;
+}
+
+
+/* =========================
+   FOOTER - IGUAL A DESTINOS
+   ========================= */
+
+.footer {
+    padding: 40px 25px;
+    gap: 35px 20px;
+    justify-content: center;
+}
+
+.footer-col {
+    width: calc(50% - 20px);
+    min-width: 160px;
+}
+
+.footer .logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer h3 {
+    font-size: 17px;
+}
+
+.footer p,
+.footer a,
+.footer li {
+    font-size: 14px;
+}
+
+}
+
+/* =========================================================
+CELULARES PEQUEÑOS
+480px o menos
+========================================================= */
+
+@media (max-width: 480px) {
+
+/* =========================
+   HEADER - IGUAL A DESTINOS
+   ========================= */
+
+header {
+    padding: 8px 10px;
+}
+
+.header .logo img {
+    height: 48px;
+}
+
+.buscar-icono img {
+    width: 34px;
+    height: 34px;
+}
+
+.boton-tres-puntos {
+    font-size: 25px;
+}
+
+.header nav {
+    padding-top: 7px;
+}
+
+.header .nav-link li {
+    padding: 0 7px;
+}
+
+.header .nav-link li a {
+    font-size: 13px;
+}
+
+.input-buscar.activo {
+    width: calc(100vw - 90px);
+    right: 40px;
+    top: 62px;
+}
+
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+.contacto {
+    padding: 30px 15px 40px;
+}
+
+.titulo h1 {
+    font-size: 32px;
+}
+
+.linea-superior {
+    width: 60px;
+    height: 3px;
+}
+
+.linea-inferior {
+    width: 145px;
+    height: 3px;
+}
+
+.descripcion {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 18px auto 25px;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    padding: 22px 15px;
+    border-radius: 9px;
+}
+
+.formulario label {
+    font-size: 15px;
+}
+
+.campo {
+    height: 42px;
+}
+
+.campo img {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+.campo input,
+.campo textarea {
+    font-size: 14px;
+}
+
+.mensaje-campo {
+    height: 100px;
+}
+
+.formulario button {
+    height: 43px;
+    font-size: 15px;
+}
+
+
+/* INFORMACIÓN */
+
+.informacion {
+    width: 100%;
+}
+
+.info-titulo h2 {
+    font-size: 22px;
+}
+
+.dato img {
+    width: 50px;
+    height: 50px;
+}
+
+.dato h3 {
+    font-size: 15px;
+}
+
+.dato p {
+    font-size: 14px;
+}
+
+
+/* MAPA */
+
+.mapa {
+    height: 220px;
+}
+
+
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    padding: 22px 18px;
+}
+
+.mensaje-final h2 {
+    font-size: 24px;
+    white-space: normal;
+}
+
+.mensaje-final p {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   FOOTER - IGUAL A DESTINOS
+   ========================= */
+
+.footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 20px;
+    gap: 30px;
+}
+
+.footer-col {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+.footer .logo {
+    width: 150px;
+}
+
+.footer ul {
+    text-align: center;
+}
+
+.redes {
+    justify-content: center;
+}
+
+.redes img {
+    width: 34px;
+    height: 34px;
+}
+
+}
+
+/* =========================================================
+PANTALLAS MUY PEQUEÑAS
+360px o menos
+========================================================= */
+
+@media (max-width: 360px) {
+
+/* HEADER */
+
+.header .logo img {
+    height: 42px;
+}
+
+.buscar-icono img {
+    width: 30px;
+    height: 30px;
+}
+
+.boton-tres-puntos {
+    font-size: 23px;
+}
+
+.header .nav-link li {
+    padding: 0 5px;
+}
+
+.header .nav-link li a {
+    font-size: 12px;
+}
+
+
+/* CONTACTO */
+
+.contacto {
+    padding: 25px 10px 35px;
+}
+
+.titulo h1 {
+    font-size: 28px;
+}
+
+.descripcion {
+    font-size: 15px;
+}
+
+.formulario {
+    padding: 20px 12px;
+}
+
+.formulario label {
+    font-size: 14px;
+}
+
+.campo input,
+.campo textarea {
+    font-size: 13px;
+}
+
+.dato img {
+    width: 45px;
+    height: 45px;
+}
+
+.dato h3 {
+    font-size: 14px;
+}
+
+.dato p {
+    font-size: 13px;
+}
+
+.mapa {
+    height: 190px;
+}
+
+.mensaje-final h2 {
+    font-size: 21px;
+}
+
+.mensaje-final p {
+    font-size: 14px;
+}
+
+}

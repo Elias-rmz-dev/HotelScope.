@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Reseñas - Hotel 1800 Cerro Verde</title>
+          <link rel="stylesheet" href="../CSS/pág2Decameron.css">
+          <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+      </head>
+      <body>
+          <!--Inicio de la Parte de Henry-->
+             <header class="header">
+
+       <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+       </div>
+
+          <nav>
+               <ul class="nav-link">     
+
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+
+               </ul>
+          </nav>
+
+          <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+          </div>
+
+          <div class="menu-tres-puntos">
+               <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+                <div class="menu-desplegable" id="menuDesplegable">
+                   <button onclick="mostrarMisReservas()">Mis reservas</button>
+                   <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                   <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+          </div>
+
+         </header>
+         <!--Fin de parte de Henry-->
+
+         <div class="titulo-resenas">
+             <h2 class="Mejores-hoteles">Reseñas de viajeros</h2>
+
+             <select>
+                 <option value="1">Mejor valorados</option>
+                 <option value="2">Peor valorados</option>
+             </select>
+         </div>
+
+         <form id="form-resena" class="form-nueva-resena">
+             <h3>Deja tu reseña</h3>
+
+             <input type="text" id="resena-nombre" placeholder="Tu nombre" required>
+
+             <select id="resena-estrellas" required>
+                 <option value="5">★★★★★ Excelente</option>
+                 <option value="4">★★★★☆ Muy bueno</option>
+                 <option value="3">★★★☆☆ Bueno</option>
+                 <option value="2">★★☆☆☆ Regular</option>
+                 <option value="1">★☆☆☆☆ Malo</option>
+             </select>
+
+             <textarea id="resena-comentario" placeholder="Cuéntanos tu experiencia..." required></textarea>
+
+             <button type="submit" class="btn-hoteles">Publicar reseña</button>
+         </form>
+
+          <div class="contenedor-hoteles">
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">F</div>
+        <div class="datos-resena">
+            <h3>Fatima P.</h3>
+            <span>Guatemala · Mayo 2026</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+        Vistas increíbles al volcan de Santa Ana, una comida
+        que me enamoro del país y en general una experiencia
+        muy bonita, muy buen orden en las habitaciones
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">R</div>
+        <div class="datos-resena">
+            <h3>Rodrigo J.</h3>
+            <span>España · Febrero 2026</span>
+        </div>
+        <div class="estrellas">★★★☆☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Hotel promedio, nada de que cambie con respecto
+        a otros hoteles que haya visitado anteriormente,
+        si lo recomendaria
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">S</div>
+        <div class="datos-resena">
+            <h3>Daniela S.</h3>
+            <span>Honduras · Mayo 2026</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+       habitaciones muy espaciosas, me encanto el hotel
+       amé el desayuno y me experiencia fue realmente
+       agradable, hotel que visitaria de nuevo
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">M</div>
+        <div class="datos-resena">
+            <h3>Mauricio L.</h3>
+            <span>El Salvador · Agosto 2026</span>
+        </div>
+        <div class="estrellas">★★★★☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Las vistas al volcán son espectaculares, ideal para
+        desconectar unos días de la ciudad.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">C</div>
+        <div class="datos-resena">
+            <h3>Carla V.</h3>
+            <span>Panamá · Julio 2026</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+        El servicio de restaurante fue excelente, probamos
+        platos típicos deliciosos durante toda la estadía.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">E</div>
+        <div class="datos-resena">
+            <h3>Esteban R.</h3>
+            <span>Costa Rica · Junio 2026</span>
+        </div>
+        <div class="estrellas">★★★★☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Habitaciones amplias y muy limpias, aunque el wifi
+        era algo lento en la zona de la piscina.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">A</div>
+        <div class="datos-resena">
+            <h3>Ana Lucía M.</h3>
+            <span>Guatemala · Abril 2026</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+        Una experiencia inolvidable, el personal se preocupó
+        por hacer nuestra estadía perfecta en todo momento.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">I</div>
+        <div class="datos-resena">
+            <h3>Iván C.</h3>
+            <span>Honduras · Marzo 2026</span>
+        </div>
+        <div class="estrellas">★★★☆☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Está bien ubicado, pero el desayuno podría tener
+        un poco más de variedad.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">M</div>
+        <div class="datos-resena">
+            <h3>Melissa T.</h3>
+            <span>Nicaragua · Febrero 2026</span>
+        </div>
+        <div class="estrellas">★★★★☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Muy tranquilo y con buena atención, perfecto para
+        descansar en familia unos días.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">R</div>
+        <div class="datos-resena">
+            <h3>Rodolfo A.</h3>
+            <span>España · Enero 2026</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+        Volveríamos sin dudarlo, el hotel supera lo que
+        se ve en las fotos.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">C</div>
+        <div class="datos-resena">
+            <h3>Cecilia G.</h3>
+            <span>El Salvador · Diciembre 2025</span>
+        </div>
+        <div class="estrellas">★★★☆☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Cumple bien, aunque el estacionamiento se llena
+        rápido los fines de semana.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">D</div>
+        <div class="datos-resena">
+            <h3>Diego M.</h3>
+            <span>México · Noviembre 2025</span>
+        </div>
+        <div class="estrellas">★★★★☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Excelente relación calidad-precio para la zona
+        de Cerro Verde.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">L</div>
+        <div class="datos-resena">
+            <h3>Lorena P.</h3>
+            <span>Guatemala · Octubre 2025</span>
+        </div>
+        <div class="estrellas">★★★★★</div>
+    </div>
+    <p class="parrafo-opinion">
+        El paisaje es hermoso y las habitaciones muy
+        cómodas, totalmente recomendado.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">S</div>
+        <div class="datos-resena">
+            <h3>Sergio D.</h3>
+            <span>Honduras · Septiembre 2025</span>
+        </div>
+        <div class="estrellas">★★☆☆☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        El servicio de limpieza tardó bastante en
+        atender nuestra habitación.
+    </p>
+</div>
+
+<div class="card-reseñas">
+    <div class="encabezado-resena">
+        <div class="avatar">F</div>
+        <div class="datos-resena">
+            <h3>Fabiola N.</h3>
+            <span>Costa Rica · Agosto 2025</span>
+        </div>
+        <div class="estrellas">★★★★☆</div>
+    </div>
+    <p class="parrafo-opinion">
+        Un lugar acogedor con mucha naturaleza alrededor,
+        ideal para una escapada corta.
+    </p>
+</div>
+
+          </div>
+          <!--Inicio de la parte de Elias-->
+
+   <footer class="footer">
+
+    <div class="footer-col">
+
+        <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+        <p>
+            La plataforma de reseñas de hoteles que te ayuda a encontrar
+            experiencias increíbles en cualquier lugar del país.
+        </p>
+
+        <div class="redes">
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="../IMG/PNG/facebook.png" alt="Facebook">
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+                <img src="../IMG/PNG/youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://instagram.com" target="_blank">
+                <img src="../IMG/PNG/instagram.png" alt="Instagram">
+            </a>
+
+        </div>
+
+    </div>
+
+    <nav class="footer-col">
+
+        <h3>Navegación</h3>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html ">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+        </ul>
+
+    </nav>
+
+    <nav class="footer-col">
+
+        <h3>Destinos Populares</h3>
+
+        <ul>
+            <li><a href="página1.html">Sonsonate</a></li>
+            <li><a href="la-libertad.html">La Libertad</a></li>
+            <li><a href="usulutan.html">Usulután</a></li>
+            <li><a href="santa-ana.html">Santa Ana</a></li>
+        </ul>
+
+    </nav>
+
+
+    <div class="footer-col">
+
+        <h3>Contacto</h3>
+
+        <p>Hotelscope@gmail.com</p>
+        <p>+503 0000-0000</p>
+        <p>Sonsonate, El Salvador</p>
+
+    </div>
+
+</footer>
+       <script src="../JS/buscar.js"></script>
+       <script src="../JS/sesion.js"></script>
+       <script src="../JS/reservas.js"></script>
+       <script src="../JS/resenas.js"></script>
+       <script>
+         inicializarFormularioResena("hotel_1800_cerro_verde", "Hotel 1800 Cerro Verde");
+       </script>
+      </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+</head>
+<body>
+    <main class="contenedor-login">
+        <section class="login">
+
+            <div class="logo">
+                <h1>HotelScope</h1>
+                <p>Reseña de Hoteles</p>
+            </div>
+
+            <form id="formulario_login">
+                <div class="campo">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" placeholder="Ingrese su Correo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">contraseña:</label>
+                    <input type="password" id="contrasena" placeholder="Ingrese su contraseña" required>
+                </div>
+                
+              <p id="mensaje_error"></p>
+               
+              <button type="submit">Inciar Sesión</button>
+
+            </form>
+        </section>
+    </main>
+    <script src="../JS/login.js"></script>
+</body>
+</html>

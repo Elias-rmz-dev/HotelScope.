@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usulután</title>
+    <link rel="stylesheet" href="../CSS/página1.css">
+    <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+</head>
+<body>
+      <!--Inicio de la Parte de Henry-->
+             <header class="header">
+                
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../IMG/PNG/HotelScope+letras.png" width="100" height="100">
+            </a>
+       </div>  
+       
+          <nav>
+               <ul class="nav-link">     
+          
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../HTML/página1.html">Hoteles</a></li>
+            <li><a href="../HTML/página2.html">Reseñas</a></li>
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>
+            <li><a href="../HTML/contacto.html">Contacto</a></li>
+          
+               </ul>
+          </nav>
+
+          <div class="acciones">
+
+                  <div class="busqueda-container">
+                     <input type="text" class="input-buscar" placeholder="Buscar hoteles...">
+                    <div class="buscar-icono" onclick="manejarClicBuscar()"> 
+                       <img src="../IMG/PNG/Buscarlogo.png" width="50" height="50">
+                    </div>
+                  </div>
+
+          </div>
+
+          <div class="menu-tres-puntos">
+               <button class="boton-tres-puntos" onclick="mostrarMenu()">⋮</button>
+                <div class="menu-desplegable" id="menuDesplegable">
+                   <button onclick="mostrarMisReservas()">Mis reservas</button>
+                   <button onclick="mostrarMisResenas()">Mis reseñas</button>
+                   <button onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+          </div>
+
+         </header>
+
+    <a href="../HTML/tekapa.html" class="hotel-enlace">
+    <section class="hotel">
+
+        
+
+    <div class="hotel-imagen">
+            <img src="../IMG/JPG/tekapa.jpg" alt="Hotel Tekapa">
+    </div>
+
+    <div class="hotel-info">
+
+        <h2>Hotel Tekapa</h2>
+
+        <div class="hotel-calificacion">
+            <span class="nota">4.6</span>
+            <span>Excelente</span>
+            <span class="punto">•</span>
+            <span>15 comentarios</span>
+        </div>
+
+        <div class="hotel-ubicacion">
+            <img src="../IMG/PNG/Pin maker.png" alt="Ubicacion" class="icono-ubicacion">
+            <span>Alegría, Usulután</span>
+        </div>
+
+    </div>
+
+</section>
+</a>
+
+   <!--Fin de la parte de Elias-->
+   <!--Inicio de la parte de Elias-->
+    <hr>
+    <a href="../HTML/barillas.html" class="hotel-enlace">
+    <section class="hotel">
+
+        
+
+    <div class="hotel-imagen">
+            <img src="../IMG/JPG/puerto barillas.jpg" alt="Hotel Puerto Barillas">
+    </div>
+
+    <div class="hotel-info">
+
+        <h2>Puerto Barillas</h2>
+
+        <div class="hotel-calificacion">
+            <span class="nota">4.6</span>
+            <span>Excelente</span>
+            <span class="punto">•</span>
+            <span>15 comentarios</span>
+        </div>
+
+        <div class="hotel-ubicacion">
+            <img src="../IMG/PNG/Pin maker.png" alt="Ubicacion" class="icono-ubicacion">
+            <span> Usulután </span>
+        </div>
+
+    </div>
+
+</section>
+</a>
+<hr>
+   <!--Fin de la parte de Elias-->
+   <!--Inicio de la Parte de Henry-->
+
+         <a href="../HTML/sol a sol.html" class="hotel-enlace">
+         <section class="hotel">
+
+        
+
+    <div class="hotel-imagen">
+            <img src="../IMG/JPG/sol a sol.avif" alt="Hotel de Sol a Sol">
+    </div>
+
+    <div class="hotel-info">
+
+        <h2>Hotel de Sol a Sol</h2>
+
+        <div class="hotel-calificacion">
+            <span class="nota">4.4</span>
+            <span>Excelente</span>
+            <span class="punto">•</span>
+            <span>20 comentarios</span>
+        </div>
+
+        <div class="hotel-ubicacion">
+            <img src="../IMG/PNG/Pin maker.png" alt="Ubicacion" class="icono-ubicacion">
+            <span> El Manjague, Usulután </span>
+        </div>
+
+    </div>
+
+</section>
+</a>
+<hr>
+
+          <!--Fin de la parte de Henry-->
+
+          <!--Inicio de la parte de Elias-->
+
+    <a href="../HTML/sevilla.html" class="hotel-enlace">
+    <section class="hotel">
+
+        
+
+    <div class="hotel-imagen">
+            <img src="../IMG/JPG/Sevilla.jpeg" alt="Sevilla">
+    </div>
+
+    <div class="hotel-info">
+
+        <h2>Hotel Sevilla</h2>
+
+        <div class="hotel-calificacion">
+            <span class="nota">4.0</span>
+            <span>Excelente</span>
+            <span class="punto">•</span>
+            <span>12 comentarios</span>
+        </div>
+
+        <div class="hotel-ubicacion">
+            <img src="../IMG/PNG/Pin maker.png" alt="Ubicacion" class="icono-ubicacion">
+            <span>Santa María, Usulután</span>
+        </div>
+
+    </div>
+
+</section>
+</a>
+<hr>
+
+     <p id="sin-resultados" style="display:none;">No se encontraron resultados</p>
+
+    <div class="contenedor-boton">
+        <a href="../HTML/santa-ana.html">
+          <button class="btn-hoteles"> Explorar más hoteles</button>
+        </a>
+    </div>
+   <!--Fin de la parte de Elias-->
+
+   <footer class="footer">
+
+    <div class="footer-col">
+
+        <img src="../IMG/PNG/HotelScope+letras.png" alt="Logo" class="logo">
+
+        <p>
+            La plataforma de reseñas de hoteles que te ayuda a encontrar
+            experiencias increíbles en cualquier lugar del país.
+        </p>
+
+        <div class="redes">
+
+            <a href="https://facebook.com" target="_blank">
+                <img src="../IMG/PNG/facebook.png" alt="Facebook">
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+                <img src="../IMG/PNG/youtube.png" alt="YouTube">
+            </a>
+
+            <a href="https://instagram.com" target="_blank">   
+                <img src="../IMG/PNG/instagram.png" alt="Instagram">   
+            </a>   
+   
+        </div>   
+   
+    </div>   
+   
+    <nav class="footer-col">   
+   
+        <h3>Navegación</h3>   
+   
+        <ul>   
+            <li><a href="../index.html">Inicio</a></li>   
+            <li><a href="../HTML/página1.html ">Hoteles</a></li>   
+            <li><a href="../HTML/página2.html">Reseñas</a></li>   
+            <li><a href="../HTML/Destinos.html">Destinos</a></li>   
+            <li><a href="../HTML/contacto.html">Contacto</a></li>   
+        </ul>   
+   
+    </nav>   
+   
+    <nav class="footer-col">   
+   
+        <h3>Destinos Populares</h3>   
+   
+        <ul>   
+            <li><a href="página1.html">Sonsonate</a></li>   
+            <li><a href="la-libertad.html">La Libertad</a></li>   
+            <li><a href="usulutan.html">Usulután</a></li>   
+            <li><a href="santa-ana.html">Santa Ana</a></li>   
+        </ul>   
+   
+    </nav>   
+   
+       
+    <div class="footer-col">   
+   
+        <h3>Contacto</h3>   
+   
+        <p>Hotelscope@gmail.com</p>   
+        <p>+503 0000-0000</p>   
+        <p>Sonsonate, El Salvador</p>   
+   
+    </div>   
+   
+</footer>   
+  
+</body>   
+<script src="../JS/buscar.js"></script>   
+<script src="../JS/sesion.js"></script>   
+<script src="../JS/reservas.js"></script>   
+<script src="../JS/resenas.js"></script>   
+</html>
