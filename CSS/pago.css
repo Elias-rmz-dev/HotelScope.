@@ -1,0 +1,505 @@
+/* ================= MODAL DE PAGO ================= */ 
+ 
+.modal-pago { 
+ 
+    position: fixed; 
+ 
+    top: 0; 
+ 
+    left: 0; 
+ 
+    width: 100%; 
+ 
+    height: 100%; 
+ 
+    background: rgba(0, 0, 0, 0.65); 
+ 
+    display: flex; 
+ 
+    justify-content: center; 
+ 
+    align-items: center; 
+ 
+    padding: 20px; 
+ 
+    z-index: 9999; 
+ 
+    overflow-y: auto; 
+ 
+} 
+ 
+.modal-pago.oculto { 
+ 
+    display: none; 
+ 
+} 
+ 
+.contenedor-pago { 
+ 
+    width: 100%; 
+ 
+    max-width: 700px; 
+ 
+    max-height: 90vh; 
+ 
+    overflow-y: auto; 
+ 
+    background: white; 
+ 
+    border-radius: 14px; 
+ 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); 
+ 
+    padding: 30px; 
+ 
+    position: relative; 
+ 
+} 
+ 
+.encabezado-pago { 
+ 
+    display: flex; 
+ 
+    justify-content: space-between; 
+ 
+    align-items: center; 
+ 
+    margin-bottom: 25px; 
+ 
+    border-bottom: 1px solid #ddd; 
+ 
+    padding-bottom: 15px; 
+ 
+} 
+ 
+.encabezado-pago h2 { 
+ 
+    font-size: 24px; 
+ 
+    margin: 0; 
+ 
+} 
+ 
+.btn-cerrar-pago { 
+ 
+    border: none; 
+ 
+    background: transparent; 
+ 
+    font-size: 28px; 
+ 
+    cursor: pointer; 
+ 
+    color: #555; 
+ 
+    width: auto; 
+ 
+    padding: 0 5px; 
+ 
+} 
+ 
+.btn-cerrar-pago:hover { 
+ 
+    color: #000; 
+ 
+} 
+ 
+.resumen-pago { 
+ 
+    background: #f5f5f5; 
+ 
+    border-radius: 10px; 
+ 
+    padding: 18px; 
+ 
+    margin-bottom: 25px; 
+ 
+} 
+ 
+.resumen-pago h3 { 
+ 
+    margin-bottom: 15px; 
+ 
+} 
+ 
+.fila-pago { 
+ 
+    display: flex; 
+ 
+    justify-content: space-between; 
+ 
+    gap: 15px; 
+ 
+    margin-bottom: 10px; 
+ 
+} 
+ 
+.fila-pago.total { 
+ 
+    border-top: 1px solid #ccc; 
+ 
+    padding-top: 12px; 
+ 
+    margin-top: 12px; 
+ 
+    font-size: 18px; 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+.metodo-pago { 
+ 
+    margin-bottom: 20px; 
+ 
+} 
+ 
+.metodo-pago label { 
+ 
+    display: block; 
+ 
+    font-weight: bold; 
+ 
+    margin-bottom: 8px; 
+ 
+} 
+ 
+.metodo-pago select { 
+ 
+    width: 100%; 
+ 
+    padding: 12px; 
+ 
+    border: 1px solid #ccc; 
+ 
+    border-radius: 7px; 
+ 
+    font-size: 15px; 
+ 
+    background: white; 
+ 
+    cursor: pointer; 
+ 
+} 
+ 
+.datos-pago { 
+ 
+    margin-top: 20px; 
+ 
+} 
+ 
+.campo-pago { 
+ 
+    margin-bottom: 15px; 
+ 
+} 
+ 
+.campo-pago label { 
+ 
+    display: block; 
+ 
+    margin-bottom: 7px; 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+.campo-pago input, 
+ 
+.campo-pago select { 
+ 
+    width: 100%; 
+ 
+    padding: 12px; 
+ 
+    border: 1px solid #ccc; 
+ 
+    border-radius: 7px; 
+ 
+    font-size: 15px; 
+ 
+    outline: none; 
+ 
+} 
+ 
+.campo-pago input:focus, 
+ 
+.campo-pago select:focus { 
+ 
+    border-color: #555; 
+ 
+} 
+ 
+.fila-campos-pago { 
+ 
+    display: grid; 
+ 
+    grid-template-columns: 1fr 1fr; 
+ 
+    gap: 15px; 
+ 
+} 
+ 
+.ayuda-pago { 
+ 
+    font-size: 13px; 
+ 
+    color: #666; 
+ 
+    margin-top: 5px; 
+ 
+} 
+ 
+.condiciones-pago { 
+ 
+    background: #f8f8f8; 
+ 
+    border-radius: 8px; 
+ 
+    padding: 15px; 
+ 
+    margin: 20px 0; 
+ 
+    font-size: 13px; 
+ 
+    color: #555; 
+ 
+} 
+ 
+.btn-pagar { 
+ 
+    width: 100%; 
+ 
+    padding: 14px; 
+ 
+    border: none; 
+ 
+    border-radius: 8px; 
+ 
+    background: #333; 
+ 
+    color: white; 
+ 
+    font-size: 16px; 
+ 
+    font-weight: bold; 
+ 
+    cursor: pointer; 
+ 
+    transition: transform 0.2s ease, background 0.2s ease; 
+ 
+} 
+ 
+.btn-pagar:hover { 
+ 
+    background: #222; 
+ 
+    transform: scale(1.02); 
+ 
+} 
+ 
+.btn-pagar:disabled { 
+ 
+    opacity: 0.6; 
+ 
+    cursor: not-allowed; 
+ 
+    transform: none; 
+ 
+} 
+ 
+.mensaje-pago { 
+ 
+    text-align: center; 
+ 
+    margin-top: 15px; 
+ 
+    min-height: 20px; 
+ 
+    font-size: 14px; 
+ 
+} 
+ 
+.procesando-pago { 
+ 
+    text-align: center; 
+ 
+    padding: 30px 10px; 
+ 
+} 
+ 
+.spinner-pago { 
+ 
+    width: 45px; 
+ 
+    height: 45px; 
+ 
+    border: 4px solid #ddd; 
+ 
+    border-top: 4px solid #333; 
+ 
+    border-radius: 50%; 
+ 
+    animation: girar-pago 0.8s linear infinite; 
+ 
+    margin: 0 auto 20px; 
+ 
+} 
+ 
+@keyframes girar-pago { 
+ 
+    from { 
+ 
+        transform: rotate(0deg); 
+ 
+    } 
+ 
+    to { 
+ 
+        transform: rotate(360deg); 
+ 
+    } 
+ 
+} 
+ 
+.confirmacion-pago { 
+ 
+    text-align: center; 
+ 
+    padding: 15px 0; 
+ 
+} 
+ 
+.confirmacion-pago h2 { 
+ 
+    margin-bottom: 15px; 
+ 
+} 
+ 
+.confirmacion-exito { 
+ 
+    font-size: 45px; 
+ 
+    margin-bottom: 10px; 
+ 
+} 
+ 
+.codigo-reserva { 
+ 
+    background: #f2f2f2; 
+ 
+    border-radius: 8px; 
+ 
+    padding: 12px; 
+ 
+    margin: 20px 0; 
+ 
+    font-size: 18px; 
+ 
+    font-weight: bold; 
+ 
+} 
+ 
+.detalles-confirmacion { 
+ 
+    text-align: left; 
+ 
+    background: #f7f7f7; 
+ 
+    border-radius: 8px; 
+ 
+    padding: 15px; 
+ 
+    margin-top: 20px; 
+ 
+} 
+ 
+.btn-finalizar-pago { 
+ 
+    width: 100%; 
+ 
+    padding: 13px; 
+ 
+    border: none; 
+ 
+    border-radius: 8px; 
+ 
+    background: #333; 
+ 
+    color: white; 
+ 
+    cursor: pointer; 
+ 
+    font-size: 15px; 
+ 
+    margin-top: 20px; 
+ 
+} 
+ 
+.btn-finalizar-pago:hover { 
+ 
+    background: #222; 
+ 
+} 
+ 
+@media (max-width: 600px) { 
+ 
+    .modal-pago { 
+ 
+        padding: 10px; 
+ 
+    } 
+ 
+    .contenedor-pago { 
+ 
+        padding: 20px; 
+ 
+        max-height: 95vh; 
+ 
+    } 
+ 
+    .encabezado-pago h2 { 
+ 
+        font-size: 20px; 
+ 
+    } 
+ 
+    .fila-campos-pago { 
+ 
+        grid-template-columns: 1fr; 
+ 
+        gap: 0; 
+ 
+    } 
+ 
+    .fila-pago { 
+ 
+        flex-direction: column; 
+ 
+        gap: 4px; 
+ 
+    } 
+ 
+} 
+ 
+@media (max-width: 360px) { 
+ 
+    .contenedor-pago { 
+ 
+        padding: 15px; 
+ 
+    } 
+ 
+    .encabezado-pago h2 { 
+ 
+        font-size: 18px; 
+ 
+    } 
+ 
+    .btn-pagar { 
+ 
+        font-size: 14px; 
+ 
+    } 
+ 
+} este esta bien?
