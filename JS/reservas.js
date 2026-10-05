@@ -4,7 +4,7 @@
    ========================================================= */
 
 /* ---------- Datos de los hoteles precios reales de referencia ---------- */
-const HOTELES_DATA = {
+const HOTELES_DATA = { /* - - - - este es un objeto - - - -*/
 
     decameron: {
 
