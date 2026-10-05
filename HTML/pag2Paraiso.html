@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas - Hotel Paraíso</title>
+    <link rel="stylesheet" href="../CSS/pag2Decameron.css">
+    <link rel="icon" href="../IMG/PNG/HotelScope-Logo.png">
+          <link rel="stylesheet" href="../CSS/responsive-menu-search.css">
+      </head>
+
+<body>
+
+    <!-- Inicio de la Parte de Henry -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <a href="../index.html">
+
+                <img
+                    src="../IMG/PNG/HotelScope+letras.png"
+                    width="100"
+                    height="100"
+                    alt="HotelScope"
+                >
+
+            </a>
+
+        </div>
+
+
+        <nav>
+
+            <ul class="nav-link">
+
+                <li>
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/pagina1.html">
+                        Hoteles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/pagina2.html">
+                        Reseñas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/Destinos.html">
+                        Destinos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="acciones">
+
+            <div class="busqueda-container">
+
+                <input
+                    type="text"
+                    class="input-buscar"
+                    placeholder="Buscar hoteles..."
+                >
+
+                <div
+                    class="buscar-icono"
+                    onclick="manejarClicBuscar()"
+                >
+
+                    <img
+                        src="../IMG/PNG/Buscarlogo.png"
+                        width="50"
+                        height="50"
+                        alt="Buscar"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-tres-puntos">
+
+            <button
+                class="boton-tres-puntos"
+                onclick="mostrarMenu()"
+            >
+                ⋮
+            </button>
+
+
+            <div
+                class="menu-desplegable"
+                id="menuDesplegable"
+            >
+
+                <button onclick="mostrarMisReservas()">
+                    Mis reservas
+                </button>
+
+                <button onclick="mostrarMisResenas()">
+                    Mis reseñas
+                </button>
+
+                <button onclick="cerrarSesion()">
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Fin de la Parte de Henry -->
+
+
+    <main>
+
+        <div class="reseñas">
+
+
+            <!-- Título -->
+
+            <div class="titulo-resenas">
+
+                <h2 class="Mejores-hoteles">
+                    Reseñas de viajeros
+                </h2>
+
+
+                <select id="orden-resenas">
+
+                    <option value="1">
+                        Mejor valorados
+                    </option>
+
+                    <option value="2">
+                        Peor valorados
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Formulario para nuevas reseñas -->
+
+            <form
+                id="form-resena"
+                class="form-nueva-resena"
+            >
+
+                <h3>
+                    Deja tu reseña
+                </h3>
+
+
+                <input
+                    type="text"
+                    id="resena-nombre"
+                    placeholder="Tu nombre"
+                    required
+                >
+
+
+                <select
+                    id="resena-estrellas"
+                    required
+                >
+
+                    <option value="5">
+                        ★★★★★ Excelente
+                    </option>
+
+                    <option value="4">
+                        ★★★★☆ Muy bueno
+                    </option>
+
+                    <option value="3">
+                        ★★★☆☆ Bueno
+                    </option>
+
+                    <option value="2">
+                        ★★☆☆☆ Regular
+                    </option>
+
+                    <option value="1">
+                        ★☆☆☆☆ Malo
+                    </option>
+
+                </select>
+
+
+                <textarea
+                    id="resena-comentario"
+                    placeholder="Cuéntanos tu experiencia..."
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn-hoteles"
+                >
+                    Publicar reseña
+                </button>
+
+            </form>
+
+
+            <!-- Contenedor de reseñas -->
+
+            <div class="contenedor-hoteles">
+
+
+                <!-- RESEÑA 1 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            J
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Josué S.
+                            </h3>
+
+                            <span>
+                                Colombia · Enero 2026
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★☆☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Un lugar muy bonito para pasar unos días de
+                        descanso. Las instalaciones son agradables y
+                        el ambiente es bastante tranquilo.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 2 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            M
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                María G.
+                            </h3>
+
+                            <span>
+                                El Salvador · Agosto 2026
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Me encantó mi experiencia en Hotel Paraíso.
+                        El ambiente es tranquilo, las instalaciones
+                        están limpias y el personal fue muy amable.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 3 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            C
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Carlos R.
+                            </h3>
+
+                            <span>
+                                El Salvador · Junio 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Un buen lugar para pasar el fin de semana.
+                        Las habitaciones fueron cómodas y el ambiente
+                        fue perfecto para descansar.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 4 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            A
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Andrea P.
+                            </h3>
+
+                            <span>
+                                Guatemala · Marzo 2024
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Excelente experiencia. El hotel tiene un
+                        ambiente muy agradable y las áreas comunes
+                        estaban muy bien cuidadas.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 5 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            D
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Daniel M.
+                            </h3>
+
+                            <span>
+                                Honduras · Octubre 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Pasamos unos días muy agradables. La atención
+                        fue buena y las instalaciones fueron adecuadas
+                        para disfrutar de nuestras vacaciones.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 6 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            S
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Sofía L.
+                            </h3>
+
+                            <span>
+                                El Salvador · Mayo 2026
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Un lugar excelente para relajarse. Me gustó
+                        mucho el ambiente y la atención del personal.
+                        Definitivamente volvería.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 7 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            R
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Ricardo T.
+                            </h3>
+
+                            <span>
+                                El Salvador · Febrero 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        La experiencia fue bastante buena. El lugar
+                        es tranquilo y tiene espacios cómodos para
+                        descansar con la familia.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 8 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            V
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Valeria C.
+                            </h3>
+
+                            <span>
+                                El Salvador · Julio 2026
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Me gustó mucho el hotel. Las instalaciones
+                        estaban limpias y el personal fue muy atento
+                        durante nuestra estadía.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 9 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            F
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Fernando C.
+                            </h3>
+
+                            <span>
+                                México · Noviembre 2024
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Un lugar bastante agradable para descansar.
+                        El ambiente es tranquilo y las habitaciones
+                        fueron cómodas.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 10 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            G
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Gabriela R.
+                            </h3>
+
+                            <span>
+                                El Salvador · Abril 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Excelente lugar para pasar unos días con la
+                        familia. Todo estuvo muy bien y disfrutamos
+                        mucho nuestra visita.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 11 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            E
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Eduardo P.
+                            </h3>
+
+                            <span>
+                                Guatemala · Septiembre 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Una buena experiencia en general. El hotel
+                        es cómodo y tiene un ambiente agradable para
+                        disfrutar de unos días de descanso.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 12 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            P
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Patricia M.
+                            </h3>
+
+                            <span>
+                                El Salvador · Enero 2024
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Muy buena experiencia. El lugar es bonito,
+                        tranquilo y perfecto para descansar después
+                        de una semana de trabajo.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 13 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            K
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Kevin J.
+                            </h3>
+
+                            <span>
+                                Honduras · Junio 2026
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Me pareció una buena opción para pasar unas
+                        vacaciones. El personal fue amable y el
+                        ambiente bastante relajado.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 14 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            L
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Laura V.
+                            </h3>
+
+                            <span>
+                                El Salvador · Octubre 2023
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Una experiencia muy agradable. Las instalaciones
+                        estaban en buenas condiciones y disfrutamos
+                        mucho de nuestra estadía.
+
+                    </p>
+
+                </div>
+
+
+                <!-- RESEÑA 15 -->
+
+                <div class="card-reseñas">
+
+                    <div class="encabezado-resena">
+
+                        <div class="avatar">
+                            N
+                        </div>
+
+                        <div class="datos-resena">
+
+                            <h3>
+                                Nicolás F.
+                            </h3>
+
+                            <span>
+                                Costa Rica · Marzo 2025
+                            </span>
+
+                        </div>
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+
+                    <p class="parrafo-opinion">
+
+                        Un hotel tranquilo y agradable. Fue una buena
+                        experiencia para desconectarse de la rutina
+                        y pasar unos días de descanso.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Inicio de la parte de Elias -->
+
+    <footer class="footer">
+
+
+        <!-- Columna principal -->
+
+        <div class="footer-col">
+
+            <img
+                src="../IMG/PNG/HotelScope+letras.png"
+                alt="Logo HotelScope"
+                class="logo"
+            >
+
+
+            <p>
+
+                La plataforma de reseñas de hoteles que te ayuda a
+                encontrar experiencias increíbles en cualquier lugar
+                del país.
+
+            </p>
+
+
+            <div class="redes">
+
+                <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="../IMG/PNG/facebook.png"
+                        alt="Facebook"
+                    >
+
+                </a>
+
+
+                <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="../IMG/PNG/youtube.png"
+                        alt="YouTube"
+                    >
+
+                </a>
+
+
+                <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="../IMG/PNG/instagram.png"
+                        alt="Instagram"
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navegación -->
+
+        <nav class="footer-col">
+
+            <h3>
+                Navegación
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/pagina1.html">
+                        Hoteles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/pagina2.html">
+                        Reseñas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/Destinos.html">
+                        Destinos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Destinos populares -->
+
+        <nav class="footer-col">
+
+            <h3>
+                Destinos Populares
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    <a href="../HTML/pagina1.html">
+                        Sonsonate
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/la-libertad.html">
+                        La Libertad
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/usulutan.html">
+                        Usulután
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../HTML/santa-ana.html">
+                        Santa Ana
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Contacto -->
+
+        <div class="footer-col">
+
+            <h3>
+                Contacto
+            </h3>
+
+            <p>
+                Hotelscope@gmail.com
+            </p>
+
+            <p>
+                +503 0000-0000
+            </p>
+
+            <p>
+                Sonsonate, El Salvador
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- Scripts -->
+
+    <script src="../JS/buscar.js"></script>
+
+    <script src="../JS/sesion.js"></script>
+
+    <script src="../JS/reservas.js"></script>
+
+    <script src="../JS/resenas.js"></script>
+
+
+    <!-- Inicialización del formulario -->
+
+    <script>
+
+        inicializarFormularioResena(
+            "paraiso",
+            "Hotel Paraíso"
+        );
+
+    </script>
+
+
+</body>
+
+</html>

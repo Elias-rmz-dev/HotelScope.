@@ -1,0 +1,484 @@
+/* =========================================================
+   HOTEL SCOPE - SUGERENCIAS DE BÚSQUEDA (ordenadores y laptops)
+   Panel de coincidencias debajo de la barra, estilo Tripadvisor.
+   ========================================================= */
+.busqueda-container {
+    position: relative;
+}
+
+.sugerencias-busqueda {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 420px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+    z-index: 1002;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+}
+
+.sugerencias-busqueda.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity .18s ease, transform .18s ease, visibility 0s;
+}
+
+.sugerencias-busqueda-resultado {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 9px 20px;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background-color .15s ease;
+}
+
+.sugerencias-busqueda-resultado:hover,
+.sugerencias-busqueda-resultado.seleccionada {
+    background-color: #f2f2f2;
+    color: #1a1a1a;
+}
+
+.sugerencias-busqueda-resultado-imagen,
+.sugerencias-busqueda-resultado-icono {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    border-radius: 6px;
+}
+
+.sugerencias-busqueda-resultado-imagen {
+    object-fit: cover;
+    background: #e5e5e5;
+}
+
+.sugerencias-busqueda-resultado-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dcdcdc;
+    background: #f7f7f7;
+    color: #1a1a1a;
+}
+
+.sugerencias-busqueda-resultado-icono svg {
+    width: 26px;
+    height: 26px;
+}
+
+.sugerencias-busqueda-resultado-texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sugerencias-busqueda-resultado-titulo {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sugerencias-busqueda-resultado-subtitulo {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+}
+
+.sugerencias-busqueda-vacio {
+    padding: 14px 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* =========================================================
+   HOTEL SCOPE - MENU HAMBURGUESA Y BUSCADOR RESPONSIVE
+   Solo aplica a tablets, teléfonos y dispositivos similares.
+   ========================================================= */
+@media (max-width: 1000px) {
+    /* ---------- Barra superior: solo logo, lupa y hamburguesa ---------- */
+    header.header {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: auto !important;
+        min-height: 72px !important;
+        padding: 10px 16px !important;
+        gap: 8px !important;
+    }
+
+    header.header nav,
+    header.header .input-buscar,
+    .sugerencias-busqueda {
+        display: none !important;
+    }
+
+    header.header .acciones {
+        margin-left: auto !important;
+        gap: 0 !important;
+    }
+    /* ---------- Botón hamburguesa ---------- */
+    .menu-tres-puntos {
+        position: static !important;
+        margin-left: 5px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .boton-tres-puntos {
+        width: 46px !important;
+        height: 46px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        position: relative !important;
+        cursor: pointer !important;
+    }
+
+    .boton-tres-puntos::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 14px;
+        width: 26px;
+        height: 3px;
+        border-radius: 3px;
+        background: #fff;
+        box-shadow: 0 8px 0 #fff, 0 16px 0 #fff;
+    }
+
+    .boton-tres-puntos::after {
+        display: none !important;
+    }
+
+    .boton-tres-puntos:hover {
+        color: transparent !important;
+        transform: none !important;
+    }
+
+    /* ---------- Menú de pantalla completa ---------- */
+    .menu-desplegable {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        margin: 0 !important;
+        padding: 88px 28px 32px !important;
+        background-color: #8a8a8a !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-100%) !important;
+        transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .28s ease, visibility 0s linear .42s !important;
+        z-index: 99999 !important;
+        overflow-y: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .menu-desplegable.mostrar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .28s ease, visibility 0s !important;
+    }
+
+    .menu-desplegable .menu-cerrar {
+        position: absolute !important;
+        top: 17px !important;
+        right: 20px !important;
+        width: 46px !important;
+        height: 46px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: #fff !important;
+        font-size: 34px !important;
+        font-weight: 400 !important;
+        line-height: 46px !important;
+        text-align: center !important;
+        cursor: pointer !important;
+    }
+
+    .menu-desplegable .menu-navegacion {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .menu-desplegable .menu-navegacion a,
+    .menu-desplegable > a {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 4px !important;
+        color: #fff !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        font-size: 25px !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: left !important;
+        cursor: pointer !important;
+    }
+
+    .menu-desplegable .menu-navegacion a:hover,
+    .menu-desplegable > a:hover {
+        color: #fff !important;
+        background: transparent !important;
+    }
+
+    .menu-desplegable .menu-separador {
+        width: 100% !important;
+        margin: 16px 0 12px !important;
+        border: 0 !important;
+        border-top: 1px solid rgba(255,255,255,.55) !important;
+    }
+
+    .menu-desplegable .menu-secundario {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .menu-desplegable .menu-secundario button {
+        width: 100% !important;
+        min-height: 54px !important;
+        padding: 13px 4px !important;
+        color: #fff !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        font-size: 22px !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+        cursor: pointer !important;
+    }
+
+    .menu-desplegable .menu-secundario button:hover {
+        color: #fff !important;
+        background: transparent !important;
+    }
+
+    body.menu-abierto-responsive,
+    body.busqueda-responsive-abierta {
+        overflow: hidden !important;
+    }
+
+    /* ---------- Buscador responsive de pantalla completa ----------
+       Basado visualmente en la referencia proporcionada.
+       Solo afecta tablets/teléfonos. */
+    .busqueda-responsive-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        background: #fff !important;
+        color: #073b2a !important;
+        z-index: 100000 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-100%) !important;
+        transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .28s ease, visibility 0s linear .42s !important;
+        overflow-y: auto !important;
+        padding: 0 24px 40px !important;
+        box-sizing: border-box !important;
+    }
+
+    .busqueda-responsive-overlay.mostrar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        transition: transform .42s cubic-bezier(.22,1,.36,1), opacity .28s ease, visibility 0s !important;
+    }
+
+    .busqueda-responsive-barra-superior {
+        height: 66px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .busqueda-responsive-volver,
+    .busqueda-responsive-limpiar,
+    .busqueda-responsive-ejecutar {
+        flex: 0 0 46px !important;
+        width: 46px !important;
+        height: 46px !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: #073b2a !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .busqueda-responsive-volver {
+        font-size: 38px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+    }
+
+    /* Equis para borrar: solo visible cuando hay texto */
+    .busqueda-responsive-limpiar {
+        font-size: 30px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        color: #68756f !important;
+    }
+
+    .busqueda-responsive-limpiar[hidden] {
+        display: none !important;
+    }
+
+    /* Lupa de HotelScope, clic = buscar */
+    .busqueda-responsive-ejecutar {
+        margin-right: 6px !important;
+    }
+
+    .busqueda-responsive-ejecutar img {
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: contain !important;
+        transition: transform .2s ease !important;
+    }
+
+    .busqueda-responsive-ejecutar:active img {
+        transform: scale(.92) !important;
+    }
+
+    .busqueda-responsive-input-wrap {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-bottom: 1.5px solid #073b2a !important;
+        padding: 2px 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .busqueda-responsive-input::-webkit-search-cancel-button {
+        display: none !important;
+    }
+
+    .busqueda-responsive-input {
+        width: 100% !important;
+        border: 0 !important;
+        outline: 0 !important;
+        background: transparent !important;
+        color: #073b2a !important;
+        font-size: 25px !important;
+        font-weight: 500 !important;
+        padding: 7px 0 !important;
+    }
+
+    .busqueda-responsive-input::placeholder {
+        color: #68756f !important;
+    }
+
+    .busqueda-responsive-resultados {
+        width: 100% !important;
+        padding-top: 16px !important;
+    }
+
+    .busqueda-responsive-resultado {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        width: 100% !important;
+        min-height: 72px !important;
+        padding: 10px 0 !important;
+        box-sizing: border-box !important;
+        color: #073b2a !important;
+        background: transparent !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        text-decoration: none !important;
+        border: 0 !important;
+        text-align: left !important;
+    }
+
+    .busqueda-responsive-resultado:hover {
+        color: #073b2a !important;
+        background: transparent !important;
+    }
+
+    .busqueda-responsive-resultado-imagen {
+        width: 56px !important;
+        height: 56px !important;
+        flex: 0 0 56px !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        background: #f1f2f1 !important;
+    }
+
+    .busqueda-responsive-resultado-icono {
+        width: 56px !important;
+        height: 56px !important;
+        flex: 0 0 56px !important;
+        border: 1px solid #d9ddda !important;
+        border-radius: 7px !important;
+        background: #f7f8f7 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 25px !important;
+        color: #073b2a !important;
+    }
+
+    .busqueda-responsive-resultado-icono svg {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .busqueda-responsive-resultado-texto {
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+
+    .busqueda-responsive-resultado-titulo {
+        display: block !important;
+        color: #073b2a !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+    }
+
+    .busqueda-responsive-resultado-subtitulo {
+        display: block !important;
+        color: #68756f !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .busqueda-responsive-vacio {
+        color: #073b2a !important;
+        font-size: 19px !important;
+        font-weight: 600 !important;
+        padding: 24px 0 !important;
+    }
+}

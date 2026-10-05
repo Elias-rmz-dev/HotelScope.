@@ -1023,13 +1023,23 @@ function cancelarReserva(indice){
  
 function mostrarMenu(){ 
  
-    const menu = 
-        document.getElementById("menuDesplegable"); 
+    const menu = document.getElementById("menuDesplegable"); 
  
     if(!menu) return; 
+
+    if (window.matchMedia && window.matchMedia('(max-width: 1000px)').matches && typeof prepararMenuHamburguesa === "function") {
+        prepararMenuHamburguesa(menu);
+    }
  
     menu.classList.toggle("mostrar"); 
+    document.body.classList.toggle("menu-abierto-responsive", menu.classList.contains("mostrar"));
 } 
+
+function cerrarMenuHamburguesa(){
+    const menu = document.getElementById("menuDesplegable");
+    if(menu) menu.classList.remove("mostrar");
+    document.body.classList.remove("menu-abierto-responsive");
+}
  
  
 function mostrarMisResenas(){ 

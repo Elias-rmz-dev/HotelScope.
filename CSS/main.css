@@ -158,10 +158,10 @@ li{
 } 
  
 .menu-desplegable{ 
-    position: absolute; 
-    top: 0px; 
-    right: 45px; 
-    width: 160px; 
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 170px;
     background-color: #fff; 
     border-radius: 8px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20); 

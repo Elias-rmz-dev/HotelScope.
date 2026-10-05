@@ -35,12 +35,21 @@ function mostrarMenu() {
 
     const menu_desplegable = document.getElementById("menuDesplegable");
 
-    if (menu_desplegable) {
+    if (!menu_desplegable) return;
 
-        menu_desplegable.classList.toggle("mostrar");
-
+    if (window.matchMedia && window.matchMedia('(max-width: 1000px)').matches && typeof prepararMenuHamburguesa === "function") {
+        prepararMenuHamburguesa(menu_desplegable);
     }
 
+    menu_desplegable.classList.toggle("mostrar");
+    document.body.classList.toggle("menu-abierto-responsive", menu_desplegable.classList.contains("mostrar"));
+
+}
+
+function cerrarMenuHamburguesa() {
+    const menu = document.getElementById("menuDesplegable");
+    if (menu) menu.classList.remove("mostrar");
+    document.body.classList.remove("menu-abierto-responsive");
 }
 
 
