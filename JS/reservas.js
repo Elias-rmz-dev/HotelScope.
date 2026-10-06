@@ -801,11 +801,21 @@ function inicializarFormularioReserva(hotelId){
  
     actualizarResumen(); 
  
-    form.addEventListener("submit", function(evento){ 
+ form.addEventListener("submit", function(evento){ 
  
-        evento.preventDefault(); 
+     evento.preventDefault(); 
  
-        const nombreHuesped = document.getElementById("nombre-huesped").value.trim(); 
+     const sesion_iniciada = localStorage.getItem("sesion_iniciada"); 
+ 
+     if(sesion_iniciada !== "true"){ 
+ 
+        window.location.replace(ruta_login); 
+ 
+        return; 
+ 
+     } 
+ 
+     const nombreHuesped = document.getElementById("nombre-huesped").value.trim();  
  
         const noches = calcularNoches(inputEntrada.value, inputSalida.value); 
  
@@ -871,7 +881,7 @@ function inicializarFormularioReserva(hotelId){
  
 /* ================= Panel "Mis reservas" ================= */ 
  
-function mostrarMisReservas(){ 
+    function mostrarMisReservas(){ 
  
     cerrarMenusDesplegables(); 
  
@@ -1041,8 +1051,17 @@ function cerrarMenuHamburguesa(){
     document.body.classList.remove("menu-abierto-responsive");
 }
  
- 
 function mostrarMisResenas(){ 
+ 
+    const sesion_iniciada = localStorage.getItem("sesion_iniciada"); 
+ 
+    if(sesion_iniciada !== "true"){ 
+ 
+        window.location.replace(ruta_login); 
+ 
+        return; 
+ 
+    } 
  
     cerrarMenusDesplegables(); 
  
