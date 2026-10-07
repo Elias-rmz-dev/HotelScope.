@@ -606,4 +606,597 @@ a{
 
 }
 
-/* ========================================================= RESPONSIVE COMPLETO - PÁGINA DE RESEÑAS ========================================================= */ /* ========================================================= TABLETS ========================================================= */ @media (max-width: 1000px) { /* ---------- NAVBAR ---------- */ header.header { height: auto; min-height: 85px; padding: 12px 20px; gap: 10px; } .header .logo img { height: 60px; width: auto; } .header nav { flex: 1; min-width: 0; } .header .nav-link { display: flex; justify-content: center; gap: 0; } .header .nav-link li { padding: 0 7px; } .header .nav-link li a { font-size: 15px; white-space: nowrap; } /* ---------- BUSCADOR ---------- */ .acciones { gap: 8px; } .buscar-icono img { width: 42px; height: 42px; } .input-buscar.activo { width: 170px; } /* ---------- TRES PUNTOS ---------- */ .menu-tres-puntos { margin-left: 5px; } /* ---------- HOTEL ---------- */ .hotel { width: 90%; max-width: 900px; margin: 35px auto; padding: 20px; gap: 25px; } .hotel-imagen { flex: 1; min-width: 0; } .hotel-imagen img { width: 100%; height: 260px; object-fit: cover; } .hotel-info { flex: 1; min-width: 0; } .hotel-info h2 { font-size: 34px; } .hotel-calificacion { gap: 12px; flex-wrap: wrap; font-size: 17px; } .hotel-ubicacion { font-size: 18px; } /* ---------- RESEÑAS ---------- */ .reseñas { width: 90%; margin: 30px auto 45px auto; } .contenedor-hoteles { grid-template-columns: repeat(2, 1fr); gap: 18px; } .card-reseñas { padding: 18px; } /* ---------- FOOTER ---------- */ .footer { gap: 25px; padding: 35px 20px; } .footer-col { width: 200px; } } /* ========================================================= CELULARES ========================================================= */ @media (max-width: 700px) { /* ===================================================== NAVBAR ===================================================== */ header.header { height: auto; min-height: 75px; padding: 10px 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; } .header .logo { flex-shrink: 0; } .header .logo img { height: 55px; width: auto; } /* La navegación ocupa una segunda fila. Se mantienen los mismos enlaces y colores. */ .header nav { order: 3; width: 100%; flex: none; overflow-x: auto; justify-content: flex-start; padding-bottom: 4px; } .header .nav-link { width: max-content; display: flex; justify-content: flex-start; gap: 0; margin: 0 auto; } .header .nav-link li { padding: 0 9px; } .header .nav-link li a { font-size: 14px; white-space: nowrap; } .header .nav-link li a:hover { padding-bottom: 4px; } /* ===================================================== BUSCADOR ===================================================== */ .acciones { margin-left: auto; gap: 5px; } .busqueda-container { flex-direction: row-reverse; } .buscar-icono img { width: 40px; height: 40px; } /* El buscador aparece debajo de la navbar cuando se activa. */ .input-buscar.activo { position: absolute; top: 68px; right: 55px; width: calc(100vw - 110px); max-width: 260px; padding: 8px 12px; margin-right: 0; background-color: #fff; border: 1px solid #ccc; box-shadow: 0 3px 8px rgba(0,0,0,.15); z-index: 1002; } /* ===================================================== MENÚ DE TRES PUNTOS ===================================================== */ .menu-tres-puntos { margin-left: 0; } .boton-tres-puntos { font-size: 30px; padding: 4px 7px; } .menu-desplegable { top: 43px; right: 0; width: 170px; } /* ===================================================== CONTENIDO HOTEL ===================================================== */ .hotel { width: 94%; max-width: 500px; margin: 25px auto; padding: 15px; display: flex; flex-direction: column; align-items: stretch; gap: 20px; } .hotel-imagen { width: 100%; } .hotel-imagen img { width: 100%; height: 220px; object-fit: cover; } .hotel-imagen:hover { transform: none; } .hotel-info { width: 100%; } .hotel-info h2 { font-size: 28px; margin-bottom: 15px; } .hotel-calificacion { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; font-size: 15px; } .nota { padding: 7px 10px; } .hotel-ubicacion { gap: 8px; font-size: 16px; } .icono-ubicacion { width: 24px; height: 24px; flex-shrink: 0; } /* ===================================================== RESEÑAS ===================================================== */ .reseñas { width: 94%; margin: 25px auto 40px auto; } .titulo-resenas { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 20px; } .titulo-resenas h2 { font-size: 24px; } .titulo-resenas a { font-size: 14px; } /* Una tarjeta por fila en celular. */ .contenedor-hoteles { display: grid; grid-template-columns: 1fr; gap: 15px; } .card-reseñas { width: 100%; min-height: auto; padding: 16px; } .encabezado-resena { gap: 10px; margin-bottom: 12px; } .avatar { width: 40px; height: 40px; flex-shrink: 0; font-size: 16px; } .datos-resena h3 { font-size: 16px; } .datos-resena span { font-size: 12px; } .estrellas { font-size: 15px; } .parrafo-opinion { font-size: 14px; line-height: 1.5; } /* ===================================================== BOTÓN ===================================================== */ .contenedor-boton { margin-top: 35px; margin-bottom: 40px; } .btn-hoteles { padding: 12px 25px; font-size: 16px; max-width: 90%; } /* ===================================================== MODAL DE RESERVAS ===================================================== */ .overlay-reservas { padding: 12px; } .modal-reservas { width: 100%; max-width: 100%; max-height: 90vh; border-radius: 12px; } .encabezado-modal-reservas { padding: 15px; } .encabezado-modal-reservas h2 { font-size: 19px; } .cuerpo-modal-reservas { padding: 14px; } .card-mi-reserva { flex-direction: column; align-items: flex-start; } .card-mi-reserva img { width: 100%; height: 160px; object-fit: cover; } .datos-mi-reserva { width: 100%; } .btn-cancelar-reserva { width: 100%; text-align: center; } /* ===================================================== FOOTER ===================================================== */ /* El footer conserva el mismo color, logo, enlaces y contenido. Solo cambia la distribución para celular. */ .footer { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 25px; padding: 35px 20px; } .footer-col { width: 100%; max-width: 300px; text-align: center; } .footer-col .logo { width: 160px; height: auto; } .footer h3 { font-size: 18px; } .footer p, .footer a, .footer li { font-size: 14px; } .footer ul { text-align: center; } .redes { justify-content: center; } } /* ========================================================= CELULARES PEQUEÑOS ========================================================= */ @media (max-width: 400px) { /* ---------- NAVBAR ---------- */ header.header { padding: 8px; } .header .logo img { height: 48px; } .buscar-icono img { width: 36px; height: 36px; } .boton-tres-puntos { font-size: 27px; } .header .nav-link li { padding: 0 7px; } .header .nav-link li a { font-size: 13px; } .input-buscar.activo { top: 62px; right: 45px; width: calc(100vw - 85px); } /* ---------- HOTEL ---------- */ .hotel { width: 94%; padding: 12px; gap: 15px; } .hotel-imagen img { height: 190px; } .hotel-info h2 { font-size: 24px; } .hotel-calificacion { font-size: 14px; } .hotel-ubicacion { font-size: 15px; } /* ---------- RESEÑAS ---------- */ .reseñas { width: 94%; } .titulo-resenas h2 { font-size: 22px; } .card-reseñas { padding: 14px; } .parrafo-opinion { font-size: 14px; } /* ---------- FOOTER ---------- */ .footer { padding: 30px 15px; } .footer-col { max-width: 280px; } .footer-col .logo { width: 150px; } }
+/* =========================================================
+   RESPONSIVE COMPLETO - PÁGINA DE RESEÑAS
+========================================================= */
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    header.header {
+        height: auto;
+        min-height: 85px;
+        padding: 12px 20px;
+        gap: 10px;
+    }
+
+    .header .logo img {
+        height: 60px;
+        width: auto;
+    }
+
+    .header nav {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .header .nav-link {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .header .nav-link li {
+        padding: 0 7px;
+    }
+
+    .header .nav-link li a {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    /* ---------- BUSCADOR ---------- */
+
+    .acciones {
+        gap: 8px;
+    }
+
+    .buscar-icono img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .input-buscar.activo {
+        width: 170px;
+    }
+
+    /* ---------- TRES PUNTOS ---------- */
+
+    .menu-tres-puntos {
+        margin-left: 5px;
+    }
+
+    /* ---------- HOTEL ---------- */
+
+    .hotel {
+        width: 90%;
+        max-width: 900px;
+        margin: 35px auto;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .hotel-imagen {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hotel-imagen img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    .hotel-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hotel-info h2 {
+        font-size: 34px;
+    }
+
+    .hotel-calificacion {
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 17px;
+    }
+
+    .hotel-ubicacion {
+        font-size: 18px;
+    }
+
+    /* ---------- RESEÑAS ---------- */
+
+    .reseñas {
+        width: 90%;
+        margin: 30px auto 45px auto;
+    }
+
+    .contenedor-hoteles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .card-reseñas {
+        padding: 18px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        gap: 25px;
+        padding: 35px 20px;
+    }
+
+    .footer-col {
+        width: 200px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .contenedor-hoteles{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    header.header {
+        height: auto;
+        min-height: 75px;
+        padding: 10px 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .header .logo {
+        flex-shrink: 0;
+    }
+
+    .header .logo img {
+        height: 55px;
+        width: auto;
+    }
+
+    /* La navegación ocupa una segunda fila. Se mantienen los mismos enlaces y colores. */
+
+    .header nav {
+        order: 3;
+        width: 100%;
+        flex: none;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 4px;
+    }
+
+    .header .nav-link {
+        width: max-content;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0;
+        margin: 0 auto;
+    }
+
+    .header .nav-link li {
+        padding: 0 9px;
+    }
+
+    .header .nav-link li a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .header .nav-link li a:hover {
+        padding-bottom: 4px;
+    }
+
+    /* =====================================================
+       BUSCADOR
+    ===================================================== */
+
+    .acciones {
+        margin-left: auto;
+        gap: 5px;
+    }
+
+    .busqueda-container {
+        flex-direction: row-reverse;
+    }
+
+    .buscar-icono img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* El buscador aparece debajo de la navbar cuando se activa. */
+
+    .input-buscar.activo {
+        position: absolute;
+        top: 68px;
+        right: 55px;
+        width: calc(100vw - 110px);
+        max-width: 260px;
+        padding: 8px 12px;
+        margin-right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 3px 8px rgba(0,0,0,.15);
+        z-index: 1002;
+    }
+
+    /* =====================================================
+       MENÚ DE TRES PUNTOS
+    ===================================================== */
+
+    .menu-tres-puntos {
+        margin-left: 0;
+    }
+
+    .boton-tres-puntos {
+        font-size: 30px;
+        padding: 4px 7px;
+    }
+
+    .menu-desplegable {
+        top: 43px;
+        right: 0;
+        width: 170px;
+    }
+
+    /* =====================================================
+       CONTENIDO HOTEL
+    ===================================================== */
+
+    .hotel {
+        width: 94%;
+        max-width: 500px;
+        margin: 25px auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .hotel-imagen {
+        width: 100%;
+    }
+
+    .hotel-imagen img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .hotel-imagen:hover {
+        transform: none;
+    }
+
+    .hotel-info {
+        width: 100%;
+    }
+
+    .hotel-info h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hotel-calificacion {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .nota {
+        padding: 7px 10px;
+    }
+
+    .hotel-ubicacion {
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .icono-ubicacion {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+
+    /* =====================================================
+       RESEÑAS
+    ===================================================== */
+
+    .reseñas {
+        width: 94%;
+        margin: 25px auto 40px auto;
+    }
+
+    .titulo-resenas {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-resenas h2 {
+        font-size: 24px;
+    }
+
+    .titulo-resenas a {
+        font-size: 14px;
+    }
+
+    /* Una tarjeta por fila en celular. */
+
+    .contenedor-hoteles {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-reseñas {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .encabezado-resena {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        font-size: 16px;
+    }
+
+    .datos-resena h3 {
+        font-size: 16px;
+    }
+
+    .datos-resena span {
+        font-size: 12px;
+    }
+
+    .estrellas {
+        font-size: 15px;
+    }
+
+    .parrafo-opinion {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* =====================================================
+       BOTÓN
+    ===================================================== */
+
+    .contenedor-boton {
+        margin-top: 35px;
+        margin-bottom: 40px;
+    }
+
+    .btn-hoteles {
+        padding: 12px 25px;
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    /* =====================================================
+       MODAL DE RESERVAS
+    ===================================================== */
+
+    .overlay-reservas {
+        padding: 12px;
+    }
+
+    .modal-reservas {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+
+    .encabezado-modal-reservas {
+        padding: 15px;
+    }
+
+    .encabezado-modal-reservas h2 {
+        font-size: 19px;
+    }
+
+    .cuerpo-modal-reservas {
+        padding: 14px;
+    }
+
+    .card-mi-reserva {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-mi-reserva img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .datos-mi-reserva {
+        width: 100%;
+    }
+
+    .btn-cancelar-reserva {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    /* El footer conserva el mismo color, logo, enlaces y contenido. Solo cambia la distribución para celular. */
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 35px 20px;
+    }
+
+    .footer-col {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .footer-col .logo {
+        width: 160px;
+        height: auto;
+    }
+
+    .footer h3 {
+        font-size: 18px;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+        font-size: 14px;
+    }
+
+    .footer ul {
+        text-align: center;
+    }
+
+    .redes {
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    header.header {
+        padding: 8px;
+    }
+
+    .header .logo img {
+        height: 48px;
+    }
+
+    .buscar-icono img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .boton-tres-puntos {
+        font-size: 27px;
+    }
+
+    .header .nav-link li {
+        padding: 0 7px;
+    }
+
+    .header .nav-link li a {
+        font-size: 13px;
+    }
+
+    .input-buscar.activo {
+        top: 62px;
+        right: 45px;
+        width: calc(100vw - 85px);
+    }
+
+    /* ---------- HOTEL ---------- */
+
+    .hotel {
+        width: 94%;
+        padding: 12px;
+        gap: 15px;
+    }
+
+    .hotel-imagen img {
+        height: 190px;
+    }
+
+    .hotel-info h2 {
+        font-size: 24px;
+    }
+
+    .hotel-calificacion {
+        font-size: 14px;
+    }
+
+    .hotel-ubicacion {
+        font-size: 15px;
+    }
+
+    /* ---------- RESEÑAS ---------- */
+
+    .reseñas {
+        width: 94%;
+    }
+
+    .titulo-resenas h2 {
+        font-size: 22px;
+    }
+
+    .card-reseñas {
+        padding: 14px;
+    }
+
+    .parrafo-opinion {
+        font-size: 14px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-col {
+        max-width: 280px;
+    }
+
+    .footer-col .logo {
+        width: 150px;
+    }
+}
