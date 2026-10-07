@@ -1,10 +1,12 @@
 const correo_correcto = "admin@hotelscope.com"; 
-const contrasena_correcta = "HotelScope2026"; 
+const contrasena_correcta = "Hotelscope2026"; 
  
 const formulario_login = document.getElementById("formulario_login"); 
 const correo = document.getElementById("correo"); 
 const contrasena = document.getElementById("contrasena"); 
 const mensaje_error = document.getElementById("mensaje_error"); 
+
+const pagina_anterior_login = document.referrer;
  
 formulario_login.addEventListener("submit", function(event) { 
  
@@ -20,7 +22,15 @@ formulario_login.addEventListener("submit", function(event) {
             localStorage.setItem("sesion_iniciada", "true"); 
             localStorage.setItem("inicio_sesion", Date.now()); 
  
-            window.location.href = "../index.html"; 
+            if(pagina_anterior_login){
+
+                window.location.replace(pagina_anterior_login);
+
+            }else{
+
+                window.location.replace("../index.html");
+
+            }
  
         } else { 
  
@@ -42,4 +52,20 @@ formulario_login.addEventListener("submit", function(event) {
  
     } 
  
+});
+
+const btn_atras = document.getElementById("btn_atras");
+
+btn_atras.addEventListener("click", function() {
+
+    if(pagina_anterior_login){
+
+        window.location.replace(pagina_anterior_login);
+
+    }else{
+
+        window.location.replace("../index.html");
+
+    }
+
 });

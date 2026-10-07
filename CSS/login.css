@@ -85,6 +85,15 @@ button:hover {
     background: #222;
 }
 
+.btn-atras {
+    margin-top: 10px;
+    background: #8a8a8a;
+}
+
+.btn-atras:hover {
+    background: #707070;
+}
+
 #mensaje_error {
     color: #d00000;
     text-align: center;
