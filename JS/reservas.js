@@ -689,6 +689,8 @@ function inicializarFormularioReserva(hotelId){
  
         guardarReservas(reservas); 
  
+        localStorage.removeItem("hotelscope_reserva_pendiente"); 
+ 
         modalPago.querySelector(".contenedor-pago").innerHTML = 
             "<div class='confirmacion-pago'>" + 
                 "<div class='confirmacion-exito'>✓</div>" + 
@@ -722,6 +724,8 @@ function inicializarFormularioReserva(hotelId){
  
             inputSalida.value = isoManana; 
  
+            inputHuespedes.value = 1; 
+ 
             actualizarResumen(); 
  
         }); 
@@ -747,11 +751,37 @@ function inicializarFormularioReserva(hotelId){
  
     inputSalida.value = isoManana; 
  
+    inputHuespedes.min = 1; 
+ 
+    inputHuespedes.max = 4; 
+ 
+    if(parseInt(inputHuespedes.value) > 4){ 
+ 
+        inputHuespedes.value = 4; 
+ 
+    } 
+ 
     function actualizarResumen(){ 
  
-        const huespedes = parseInt(inputHuespedes.value) || 1; 
+        let huespedes = parseInt(inputHuespedes.value) || 1; 
  
         const habitaciones = parseInt(selectHabitaciones.value) || 1; 
+ 
+        if(huespedes < 1){ 
+ 
+            huespedes = 1; 
+ 
+            inputHuespedes.value = 1; 
+ 
+        } 
+ 
+        if(huespedes > 4){ 
+ 
+            huespedes = 4; 
+ 
+            inputHuespedes.value = 4; 
+ 
+        } 
  
         let noches = calcularNoches(inputEntrada.value, inputSalida.value); 
  
@@ -801,21 +831,81 @@ function inicializarFormularioReserva(hotelId){
  
     actualizarResumen(); 
  
+    const reservaPendiente = JSON.parse(localStorage.getItem("hotelscope_reserva_pendiente")); 
+ 
+    if(reservaPendiente && reservaPendiente.hotelId === hotelId){ 
+ 
+        const nombreHuesped = document.getElementById("nombre-huesped"); 
+ 
+        if(nombreHuesped) nombreHuesped.value = reservaPendiente.huesped || ""; 
+ 
+        inputEntrada.value = reservaPendiente.fechaEntrada || isoHoy; 
+ 
+        inputSalida.value = reservaPendiente.fechaSalida || isoManana; 
+ 
+        inputHuespedes.value = reservaPendiente.huespedes || 1; 
+ 
+        selectHabitaciones.value = reservaPendiente.habitaciones || 1; 
+ 
+        localStorage.removeItem("hotelscope_reserva_pendiente"); 
+ 
+        actualizarResumen(); 
+ 
+    } 
+ 
  form.addEventListener("submit", function(evento){ 
  
      evento.preventDefault(); 
  
      const sesion_iniciada = localStorage.getItem("sesion_iniciada"); 
  
+     const nombreHuesped = document.getElementById("nombre-huesped").value.trim(); 
+ 
+     const huespedes = parseInt(inputHuespedes.value) || 1; 
+ 
+     const habitaciones = parseInt(selectHabitaciones.value) || 1; 
+ 
+     if(huespedes < 1 || huespedes > 4){ 
+ 
+        mensaje.textContent = "La cantidad de huéspedes debe ser de 1 a 4 por habitación."; 
+ 
+        mensaje.className = "mensaje-reserva error"; 
+ 
+        inputHuespedes.value = 4; 
+ 
+        actualizarResumen(); 
+ 
+        return; 
+ 
+     } 
+ 
      if(sesion_iniciada !== "true"){ 
+ 
+        const datosPendientes = { 
+ 
+            hotelId: hotelId, 
+ 
+            huesped: nombreHuesped, 
+ 
+            fechaEntrada: inputEntrada.value, 
+ 
+            fechaSalida: inputSalida.value, 
+ 
+            huespedes: huespedes, 
+ 
+            habitaciones: habitaciones 
+ 
+        }; 
+ 
+        localStorage.setItem("hotelscope_reserva_pendiente", JSON.stringify(datosPendientes)); 
+ 
+        localStorage.setItem("pagina_anterior_login", window.location.href); 
  
         window.location.replace(ruta_login); 
  
         return; 
  
      } 
- 
-     const nombreHuesped = document.getElementById("nombre-huesped").value.trim();  
  
         const noches = calcularNoches(inputEntrada.value, inputSalida.value); 
  
@@ -838,10 +928,6 @@ function inicializarFormularioReserva(hotelId){
             return; 
  
         } 
- 
-        const huespedes = parseInt(inputHuespedes.value) || 1; 
- 
-        const habitaciones = parseInt(selectHabitaciones.value) || 1; 
  
         const subtotal = noches * hotel.precioNoche * huespedes * habitaciones; 
  
@@ -1094,6 +1180,7 @@ function verResenas(anclaId, urlAlterna){
             }); 
  
             return; 
+ 
         } 
     } 
  
@@ -1116,4 +1203,4 @@ function cerrarMenusDesplegables(){
         menu.classList.remove("mostrar"); 
  
     }); 
-} 
+}
